@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Dentifycare</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_activity">Activity</string>
+    <string name="title_profile">Profile</string>
+    <string name="title_intro_1">Find Patients Easily</string>
+    <string name="title_intro_2"></string>
+    <string name="title_intro_3"></string>
+    <string name="desc_intro_1"></string>
+    <string name="desc_intro_2"></string>
+    <string name="desc_intro_3"></string>
 </resources>
