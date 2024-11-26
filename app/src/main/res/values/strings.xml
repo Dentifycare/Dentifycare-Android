@@ -4,9 +4,10 @@
     <string name="title_activity">Activity</string>
     <string name="title_profile">Profile</string>
     <string name="title_intro_1">Find Patients Easily</string>
-    <string name="title_intro_2"></string>
-    <string name="title_intro_3"></string>
-    <string name="desc_intro_1"></string>
-    <string name="desc_intro_2"></string>
-    <string name="desc_intro_3"></string>
+    <string name="title_intro_2">Save on Dental Care Costs</string>
+    <string name="title_intro_3">Smart Analysis with AI</string>
+    <string name="desc_intro_1">Help dental co-ed students find patients who fit clinical needs</string>
+    <string name="desc_intro_2">Get affordable dental care while supporting student education</string>
+    <string name="desc_intro_3">Our AI feature lets patients quickly and accurately scan dental conditions. Based on the analysis, it recommends suitable dental cosmetology students, ensuring efficient and reliable care</string>
+    <string name="next">Next</string>
 </resources>
