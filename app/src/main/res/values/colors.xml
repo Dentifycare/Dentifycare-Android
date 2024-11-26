@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Our Color -->
+    <color name="black_color">#FF000000</color>
+    <color name="white_color">#FFFFFFFF</color>
+    <color name="white_gray_color">#7A7A7A</color>
+    <color name="nav_background_color">#F0EFEB</color>
+    <color name="dentifycare_main_color">#0D92F4</color>
+    <color name="dentifycare_second_color">#1D3F63</color>
+    <color name="dentifycare_button_red_color">#FF0004</color>
 
+    <!-- Random Color -->
     <color name="md_theme_primary">#07677F</color>
     <color name="md_theme_onPrimary">#FFFFFF</color>
     <color name="md_theme_primaryContainer">#B7EAFF</color>
