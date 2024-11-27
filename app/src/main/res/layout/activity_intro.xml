@@ -5,17 +5,17 @@
     android:id="@+id/intro_activity"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/dentifycare_main_color"
     app:layoutDescription="@xml/activity_intro_scene"
     tools:context=".ui.intro.IntroActivity">
 
     <ImageView
-        android:id="@+id/img_intro"
+        android:id="@+id/img_intro_1"
         android:layout_width="248dp"
         android:layout_height="248dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="75dp"
         android:src="@drawable/first_intro_image"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -23,19 +23,20 @@
         android:id="@+id/title_intro_1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:textColor="@color/white_color"
         android:text="@string/title_intro_1"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@+id/img_intro"
-        app:layout_constraintStart_toStartOf="@+id/img_intro"
-        app:layout_constraintTop_toBottomOf="@+id/img_intro" />
+        app:layout_constraintEnd_toEndOf="@+id/img_intro_1"
+        app:layout_constraintStart_toStartOf="@+id/img_intro_1"
+        app:layout_constraintTop_toBottomOf="@+id/img_intro_1" />
 
     <TextView
         android:id="@+id/tv_desc_intro_1"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:textColor="@color/white_color"
         android:text="@string/desc_intro_1"
         android:textAlignment="center"
         android:textSize="20sp"
@@ -43,7 +44,136 @@
         app:layout_constraintStart_toStartOf="@+id/title_intro_1"
         app:layout_constraintTop_toBottomOf="@+id/title_intro_1" />
 
-    <Button
+    <ImageView
+        android:id="@+id/img_intro_2"
+        android:layout_width="248dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/second_intro_image"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_intro_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:textColor="@color/white_color"
+        android:text="@string/title_intro_2"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_intro_2"
+        app:layout_constraintStart_toStartOf="@+id/img_intro_2"
+        app:layout_constraintTop_toBottomOf="@+id/img_intro_2" />
+
+    <TextView
+        android:id="@+id/tv_desc_intro_2"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white_color"
+        android:text="@string/desc_intro_2"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/title_intro_2"
+        app:layout_constraintStart_toStartOf="@+id/title_intro_2"
+        app:layout_constraintTop_toBottomOf="@+id/title_intro_2" />
+
+    <ImageView
+        android:id="@+id/img_intro_3"
+        android:layout_width="248dp"
+        android:layout_height="248dp"
+        android:layout_marginTop="75dp"
+        android:src="@drawable/third_intro_image"
+        app:layout_constraintStart_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title_intro_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:textColor="@color/white_color"
+        android:text="@string/title_intro_3"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/img_intro_3"
+        app:layout_constraintStart_toStartOf="@+id/img_intro_3"
+        app:layout_constraintTop_toBottomOf="@+id/img_intro_3" />
+
+    <TextView
+        android:id="@+id/tv_desc_intro_3"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:textColor="@color/white_color"
+        android:text="@string/desc_intro_3"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="@+id/title_intro_3"
+        app:layout_constraintStart_toStartOf="@+id/title_intro_3"
+        app:layout_constraintTop_toBottomOf="@+id/title_intro_3" />
+
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="56dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="16dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintEnd_toStartOf="@+id/menu2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@id/btn_next"
+        app:layout_constraintBottom_toTopOf="@id/btn_next"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu2"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintBottom_toBottomOf="@+id/menu1"
+        app:layout_constraintEnd_toStartOf="@+id/menu3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menu1"
+        app:layout_constraintTop_toTopOf="@+id/menu1"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <androidx.constraintlayout.utils.widget.ImageFilterView
+        android:id="@+id/menu3"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="32dp"
+        app:altSrc="@drawable/ic_circle_full"
+        app:layout_constraintBottom_toBottomOf="@+id/menu2"
+        app:layout_constraintEnd_toEndOf="@+id/btn_next"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/menu2"
+        app:layout_constraintTop_toTopOf="@+id/menu2"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/ic_circle" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_start"
+        android:background="@drawable/button_shape"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginBottom="36dp"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:text="@string/start"/>
+
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_next"
         android:background="@drawable/button_shape"
         android:layout_width="match_parent"
@@ -51,11 +181,15 @@
         android:layout_marginStart="36dp"
         android:layout_marginEnd="36dp"
         android:layout_marginBottom="36dp"
+        android:textColor="@color/white_color"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"
         android:text="@string/next"/>
+
+
+
 
 
 </androidx.constraintlayout.motion.widget.MotionLayout>
