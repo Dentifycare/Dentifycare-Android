@@ -190,8 +190,4 @@
         android:textStyle="bold"
         android:text="@string/next"/>
 
-
-
-
-
 </androidx.constraintlayout.motion.widget.MotionLayout>
