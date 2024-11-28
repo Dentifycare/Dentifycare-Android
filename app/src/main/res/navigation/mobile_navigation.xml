@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/navigation_activity"
-        android:name="com.dentify.dentifycare.ui.activity.ActivityFragment"
+        android:name="com.dentify.dentifycare.ui.activity.patient.ActivityPatientFragment"
         android:label="@string/title_activity"
-        tools:layout="@layout/fragment_activity" />
+        tools:layout="@layout/fragment_activity_patient" />
 
     <fragment
         android:id="@+id/navigation_profile"

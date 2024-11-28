@@ -13,6 +13,21 @@
         android:theme="@style/Theme.Dentifycare"
         tools:targetApi="31">
         <activity
+            android:name=".ui.activity.coass.PostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.coass.DeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.patient.FeedbackPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.ConfirmationAcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ChangeInformationActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="false" />
         <activity
