@@ -26,7 +26,6 @@ class IntroActivity : AppCompatActivity() {
 
         @Suppress("DEPRECATION")
         window.statusBarColor = getColor(R.color.dentifycare_main_color)
-        supportActionBar?.hide()
 
         binding.btnStart.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)

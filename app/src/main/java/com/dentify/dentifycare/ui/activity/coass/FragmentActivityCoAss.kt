@@ -1,15 +1,14 @@
-package com.dentify.dentifycare.ui.activity
+package com.dentify.dentifycare.ui.activity.coass
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.dentify.dentifycare.databinding.FragmentActivityBinding
+import com.dentify.dentifycare.databinding.FragmentActivityCoAssBinding
 
-class ActivityFragment : Fragment() {
-
-    private var _binding: FragmentActivityBinding? = null
+class FragmentActivityCoAss : Fragment() {
+    private var _binding: FragmentActivityCoAssBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +16,7 @@ class ActivityFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentActivityBinding.inflate(inflater, container, false)
+        _binding = FragmentActivityCoAssBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
     }

@@ -24,6 +24,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.activity.coass.PostActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.coass.DeleteActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.patient.FeedbackPageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.ConfirmationAcceptedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.ChangeInformationActivity"
+            android:exported="false" />
     </application>
 
 </manifest>
