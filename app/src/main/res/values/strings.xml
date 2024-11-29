@@ -67,4 +67,13 @@
     <string name="hypodontia">Hypodontia</string>
     <string name="gingivitis">Gingivitis</string>
     <string name="quota_hint">Quota</string>
+    <string name="welcome">Welcome,</string>
+    <string name="your_ai_powered_dental_analysis_is_ready">Your AI-powered dental analysis is ready.</string>
+    <string name="desc_detect_model">Detect issues with accuracy and get personalized dental care treatment.</string>
+    <string name="try_now">Try Now</string>
+    <string name="desc_news">Explore the dental health news.</string>
+    <string name="read_news">Read News</string>
+    <string name="ai_analyze_for_you">AI Analyze For You</string>
+    <string name="upload">Upload</string>
+    <string name="analyze">Analyze</string>
 </resources>
