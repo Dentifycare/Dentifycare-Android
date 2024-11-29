@@ -4,19 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
     app:startDestination="@+id/navigation_home">
-
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.dentify.dentifycare.ui.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
-
     <fragment
         android:id="@+id/navigation_activity"
         android:name="com.dentify.dentifycare.ui.activity.patient.ActivityPatientFragment"
         android:label="@string/title_activity"
+<<<<<<< HEAD
         tools:layout="@layout/fragment_activity_patient" />
 
+=======
+        tools:layout="@layout/fragment_activity" />
+>>>>>>> 6bf8dc5 (add buttom navigation and test text for all fragment)
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.dentify.dentifycare.ui.profile.ProfileFragment"
