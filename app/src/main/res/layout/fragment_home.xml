@@ -5,30 +5,169 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/md_theme_surface"
-    tools:context=".ui.activity.ActivityFragment">
+    tools:context=".ui.home.HomeFragment">
 
-    <ProgressBar
-        android:id="@+id/progressBar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/bg_name_user"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="@drawable/background_name"
+        android:backgroundTint="@color/dentifycare_main_color"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"/>
 
     <TextView
-        android:id="@+id/text_home"
-        android:layout_width="match_parent"
+        android:id="@+id/tv_welcome"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
+        android:text="@string/welcome"
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toStartOf="@id/bg_name_user"
+        app:layout_constraintTop_toTopOf="@id/bg_name_user"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="15dp"
+        android:textSize="24sp"/>
+
+    <TextView
+        android:id="@+id/tv_name_user"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/example_name"
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toStartOf="@id/tv_welcome"
+        app:layout_constraintTop_toBottomOf="@id/tv_welcome"
+        android:textStyle="bold"
+        android:textSize="24sp"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_profile"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/profile_default"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_name_user"
+        app:layout_constraintEnd_toEndOf="@id/bg_name_user"
+        app:layout_constraintTop_toTopOf="@id/tv_welcome"/>
+
+    <TextView
+        android:id="@+id/tv_intro_ai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginEnd="5dp"
+        android:text="@string/your_ai_powered_dental_analysis_is_ready"
+        android:textColor="@color/black_color"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/bg_name_user"
+        app:layout_constraintStart_toStartOf="@id/bg_name_user"
+        app:layout_constraintTop_toBottomOf="@id/bg_name_user" />
+
+    <ImageView
+        android:id="@+id/bg_image_analyze"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:background="@drawable/background_name"
+        android:backgroundTint="@color/dentifycare_main_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_intro_ai"
+        app:layout_constraintStart_toStartOf="@id/tv_intro_ai"
+        app:layout_constraintEnd_toEndOf="@id/tv_intro_ai"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/img_detect"
+        android:layout_width="200dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/image_detect"
+        app:layout_constraintStart_toStartOf="@id/bg_image_analyze"
+        app:layout_constraintTop_toTopOf="@id/bg_image_analyze"
+        app:layout_constraintBottom_toBottomOf="@id/bg_image_analyze"/>
+
+    <TextView
+        android:id="@+id/tv_desc_analyze"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/desc_detect_model"
+        android:layout_marginEnd="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="15dp"
         android:textSize="20sp"
-        android:text="@string/title_home"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toEndOf="@id/img_detect"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_analyze"
+        app:layout_constraintTop_toTopOf="@id/img_detect"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_try_now"
+        android:layout_width="0dp"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white_color"
+        android:textAllCaps="false"
+        android:text="@string/try_now"
+        app:layout_constraintBottom_toBottomOf="@+id/img_detect"
+        app:layout_constraintEnd_toEndOf="@id/tv_desc_analyze"
+        app:layout_constraintStart_toStartOf="@id/tv_desc_analyze" />
+
+    <ImageView
+        android:id="@+id/bg_news"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:background="@drawable/background_name"
+        android:backgroundTint="@color/dentifycare_main_color"
+        app:layout_constraintTop_toBottomOf="@id/bg_image_analyze"
+        app:layout_constraintStart_toStartOf="@id/bg_image_analyze"
+        app:layout_constraintEnd_toEndOf="@id/bg_image_analyze"
+        android:layout_marginTop="20dp"/>
+
+    <ImageView
+        android:id="@+id/img_news"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:src="@drawable/news_image"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@id/bg_news"
+        app:layout_constraintTop_toTopOf="@id/bg_news"
+        app:layout_constraintBottom_toBottomOf="@id/bg_news"/>
+
+    <TextView
+        android:id="@+id/tv_desc_news"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/desc_news"
+        android:textColor="@color/white_color"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/img_news"
+        app:layout_constraintStart_toStartOf="@id/bg_news"
+        app:layout_constraintTop_toTopOf="@id/img_news" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_read_news"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/white_color"
+        android:text="@string/read_news"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="@+id/img_news"
+        app:layout_constraintEnd_toEndOf="@id/tv_desc_news"
+        app:layout_constraintStart_toStartOf="@id/tv_desc_news"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_news" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
