@@ -59,6 +59,9 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.activity)
 
+    // Circle Image
+    implementation(libs.circleimageview)
+
     // Unit testing library for testing application logic
     testImplementation(libs.junit)
 
