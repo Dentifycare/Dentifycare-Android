@@ -25,8 +25,8 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white_color"
         android:text="@string/title_intro_1"
+        android:fontFamily="@font/sf_pro_display_bold"
         android:textSize="32sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/img_intro_1"
         app:layout_constraintStart_toStartOf="@+id/img_intro_1"
         app:layout_constraintTop_toBottomOf="@+id/img_intro_1" />
@@ -38,6 +38,7 @@
         android:layout_marginTop="40dp"
         android:textColor="@color/white_color"
         android:text="@string/desc_intro_1"
+        android:fontFamily="@font/sf_pro_display_regular"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/title_intro_1"
@@ -60,8 +61,8 @@
         android:layout_marginStart="200dp"
         android:textColor="@color/white_color"
         android:text="@string/title_intro_2"
+        android:fontFamily="@font/sf_pro_display_bold"
         android:textSize="32sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/img_intro_2"
         app:layout_constraintStart_toStartOf="@+id/img_intro_2"
         app:layout_constraintTop_toBottomOf="@+id/img_intro_2" />
@@ -73,6 +74,7 @@
         android:layout_marginTop="40dp"
         android:textColor="@color/white_color"
         android:text="@string/desc_intro_2"
+        android:fontFamily="@font/sf_pro_display_regular"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/title_intro_2"
@@ -95,8 +97,8 @@
         android:layout_marginStart="200dp"
         android:textColor="@color/white_color"
         android:text="@string/title_intro_3"
+        android:fontFamily="@font/sf_pro_display_bold"
         android:textSize="32sp"
-        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/img_intro_3"
         app:layout_constraintStart_toStartOf="@+id/img_intro_3"
         app:layout_constraintTop_toBottomOf="@+id/img_intro_3" />
@@ -108,12 +110,12 @@
         android:layout_marginTop="40dp"
         android:textColor="@color/white_color"
         android:text="@string/desc_intro_3"
+        android:fontFamily="@font/sf_pro_display_regular"
         android:textAlignment="center"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="@+id/title_intro_3"
         app:layout_constraintStart_toStartOf="@+id/title_intro_3"
         app:layout_constraintTop_toBottomOf="@+id/title_intro_3" />
-
 
     <androidx.constraintlayout.utils.widget.ImageFilterView
         android:id="@+id/menu1"
@@ -170,8 +172,9 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textStyle="bold"
+        android:fontFamily="@font/sf_pro_display_bold"
         android:visibility="invisible"
+        android:textAllCaps="false"
         android:text="@string/start"/>
 
     <androidx.appcompat.widget.AppCompatButton
@@ -188,6 +191,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textStyle="bold"
+        android:textAllCaps="false"
         android:text="@string/next"/>
 
 </androidx.constraintlayout.motion.widget.MotionLayout>

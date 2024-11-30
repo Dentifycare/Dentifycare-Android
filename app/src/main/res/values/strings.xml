@@ -22,6 +22,9 @@
     <string name="example_hospital">RS JIH Yogyakarta</string>
     <string name="example_name_coass">Elina Sitorus</string>
     <string name="complete">Complete</string>
+    <string name="header_news">Health News For You</string>
+    <string name="example_name_title_news">Types of Dental</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor woandle aselole anoying andelumut lorem </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="your_activity_here">Your Activity Here</string>

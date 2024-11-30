@@ -13,6 +13,9 @@
         android:theme="@style/Theme.Dentifycare"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.NewsActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.ScanActivity"
             android:exported="false" />
         <activity
