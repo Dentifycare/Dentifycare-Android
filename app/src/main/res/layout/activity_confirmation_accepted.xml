@@ -15,7 +15,7 @@
         android:textAlignment="center"
         android:textColor="@color/black_color"
         android:textSize="30sp"
-        android:layout_marginTop="36dp"
+        android:layout_marginTop="50dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

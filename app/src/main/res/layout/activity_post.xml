@@ -15,7 +15,7 @@
             android:id="@+id/your_post"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="50dp"
             android:text="@string/new_post"
             android:textAlignment="center"
             android:textColor="@color/black_color"
