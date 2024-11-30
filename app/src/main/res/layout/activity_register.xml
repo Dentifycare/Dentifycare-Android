@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/dentifycare_main_color"
+    tools:context=".ui.register.RegisterActivity">
+
+    <TextView
+        android:id="@+id/tv_detail_register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:text="@string/detail_account"
+        android:textAlignment="center"
+        android:textColor="@color/white_color"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_desc_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/desc_detail"
+        android:textAlignment="center"
+        android:textColor="@color/white_color"
+        android:textSize="15sp"
+        android:layout_marginStart="45dp"
+        android:layout_marginEnd="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_detail_register" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundColor="@color/white_color"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc_detail">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/name"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundColor="@color/white_color"
+        app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/whatsapp_number"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/tv_choose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choose_your_role"
+        android:layout_marginTop="25dp"
+        app:layout_constraintStart_toStartOf="@+id/phoneEditTextLayout"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/white_color"
+        app:layout_constraintTop_toBottomOf="@id/phoneEditTextLayout" />
+
+    <RadioGroup
+        android:id="@+id/roleUserGroup"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="@id/phoneEditTextLayout"
+        app:layout_constraintStart_toStartOf="@id/phoneEditTextLayout"
+        app:layout_constraintTop_toBottomOf="@id/tv_choose">
+
+        <RadioButton
+            android:id="@+id/radio_patient"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="25dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radio_button_selector"
+            android:button="@null"
+            android:padding="16dp"
+            android:textAlignment="center"
+            android:text="@string/patient"
+            android:textColor="@color/dentifycare_main_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+
+        <RadioButton
+            android:id="@+id/radio_coass"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/radio_button_selector"
+            android:textAlignment="center"
+            android:button="@null"
+            android:padding="16dp"
+            android:text="@string/co_ass"
+            android:textColor="@color/dentifycare_main_color"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RadioGroup>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_shape"
+        android:backgroundTint="@color/dentifycare_second_color"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@color/white_color"
+        android:layout_marginStart="22dp"
+        android:textSize="20sp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="75dp"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,6 +16,33 @@
             android:name=".ui.home.NewsActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.home.FormCoAssActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.ConfirmationBookedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.DetailBookedActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.AnalyzeFoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.AnalyzeNotFoundActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.AnalyzeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.AnalisisActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.ScanActivity"
             android:exported="false" />
         <activity
