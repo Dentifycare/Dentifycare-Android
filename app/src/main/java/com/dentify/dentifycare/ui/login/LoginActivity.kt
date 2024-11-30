@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.dentify.dentifycare.MainActivity
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityLoginBinding
-import com.dentify.dentifycare.ui.register.FormCoAssActivity
+import com.dentify.dentifycare.ui.register.RegisterActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginBinding
@@ -37,8 +37,8 @@ class LoginActivity : AppCompatActivity() {
         finish()
     }
 
-    private fun navigationToFormCoAss() {
-        val intent = Intent(this, FormCoAssActivity::class.java)
+    private fun navigationToRegister() {
+        val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
         finish()
     }
