@@ -110,4 +110,6 @@
     <string name="gallery">Gallery</string>
     <string name="camera">Camera</string>
     <string name="choose_options">Choose Options</string>
+    <string name="no_gallery">No image selected</string>
+    <string name="no_image">No images are recorded</string>
 </resources>

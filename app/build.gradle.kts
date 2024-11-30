@@ -26,6 +26,7 @@ android {
             )
         }
     }
+
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
@@ -36,6 +37,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
@@ -61,6 +63,9 @@ dependencies {
 
     // Circle Image
     implementation(libs.circleimageview)
+
+    // Rotate Image
+    implementation(libs.androidx.exifinterface)
 
     // Unit testing library for testing application logic
     testImplementation(libs.junit)

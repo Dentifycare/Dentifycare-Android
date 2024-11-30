@@ -40,10 +40,7 @@
             android:name=".ui.home.AnalyzeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.AnalisisActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.ScanActivity"
+            android:name=".ui.home.scan.ScanActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
