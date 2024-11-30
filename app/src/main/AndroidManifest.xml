@@ -16,7 +16,7 @@
             android:name=".ui.home.NewsActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.FormCoAssActivity"
+            android:name=".ui.register.FormCoAssActivity"
             android:exported="false" />
         <activity
             android:name=".ui.register.RegisterActivity"

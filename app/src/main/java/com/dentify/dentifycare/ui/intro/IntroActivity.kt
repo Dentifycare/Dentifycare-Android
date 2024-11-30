@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.dentify.dentifycare.MainActivity
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityIntroBinding
 import com.dentify.dentifycare.ui.login.LoginActivity
@@ -29,9 +28,7 @@ class IntroActivity : AppCompatActivity() {
         window.statusBarColor = getColor(R.color.dentifycare_main_color)
 
         binding.btnStart.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            startActivity(intent)
-            finish()
+            navigationToLoginActivity()
         }
     }
 

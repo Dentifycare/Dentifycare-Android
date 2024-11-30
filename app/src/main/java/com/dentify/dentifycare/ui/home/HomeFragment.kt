@@ -1,5 +1,6 @@
 package com.dentify.dentifycare.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,6 +21,27 @@ class HomeFragment : Fragment() {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val root: View = binding.root
         return root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.btnReadNews.setOnClickListener {
+            navigationToNews()
+        }
+        binding.btnTryNow.setOnClickListener {
+            navigationToScan()
+        }
+    }
+
+    private fun navigationToNews() {
+        val intent = Intent(requireContext(), NewsActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun navigationToScan() {
+        val intent = Intent(requireContext(), ScanActivity::class.java)
+        startActivity(intent)
     }
 
     override fun onDestroyView() {

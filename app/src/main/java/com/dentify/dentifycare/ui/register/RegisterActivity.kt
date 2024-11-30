@@ -18,6 +18,9 @@ class RegisterActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        @Suppress("DEPRECATION")
+        window.statusBarColor = getColor(R.color.dentifycare_main_color)
     }
 
     private fun navigationToHomeActivity() {

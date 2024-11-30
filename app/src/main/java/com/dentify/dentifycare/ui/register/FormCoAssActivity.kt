@@ -1,4 +1,4 @@
-package com.dentify.dentifycare.ui.home
+package com.dentify.dentifycare.ui.register
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -15,5 +15,8 @@ class FormCoAssActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
+        @Suppress("DEPRECATION")
+        window.statusBarColor = getColor(R.color.dentifycare_main_color)
     }
 }
