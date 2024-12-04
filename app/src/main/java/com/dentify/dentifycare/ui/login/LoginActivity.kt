@@ -26,8 +26,12 @@ class LoginActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         window.statusBarColor = getColor(R.color.dentifycare_main_color)
 
-        binding.imgGoogle.setOnClickListener {
+        binding.btnLogin.setOnClickListener {
             navigationToHomeActivity()
+        }
+
+        binding.tvRegister.setOnClickListener {
+            navigationToRegister()
         }
     }
 

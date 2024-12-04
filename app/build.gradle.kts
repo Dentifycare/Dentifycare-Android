@@ -61,11 +61,19 @@ dependencies {
     implementation(libs.androidx.navigation.ui.ktx)
     implementation(libs.androidx.activity)
 
-    // Circle Image
+    // Circle ImageView for displaying circular images
     implementation(libs.circleimageview)
 
     // Rotate Image
     implementation(libs.androidx.exifinterface)
+
+    // Glide for image loading and caching
+    implementation(libs.glide)
+
+    // Retrofit for making network requests
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation(libs.logging.interceptor)
 
     // Unit testing library for testing application logic
     testImplementation(libs.junit)

@@ -12,8 +12,8 @@
         android:id="@+id/tv_detail_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
-        android:text="@string/detail_account"
+        android:layout_marginTop="100dp"
+        android:text="@string/create_account"
         android:textAlignment="center"
         android:textColor="@color/white_color"
         android:textSize="30sp"
@@ -64,7 +64,7 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phoneEditTextLayout"
+        android:id="@+id/emailEditTextLayout"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -80,13 +80,67 @@
         app:boxBackgroundColor="@color/white_color"
         app:layout_constraintTop_toBottomOf="@+id/nameEditTextLayout">
 
+        <com.dentify.dentifycare.views.EmailEditText
+            android:id="@+id/emailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/email"
+            android:inputType="textPersonName"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundColor="@color/white_color"
+        app:layout_constraintTop_toBottomOf="@+id/emailEditTextLayout">
+
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phoneEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="@string/whatsapp_number"
-            android:inputType="textPersonName"
+            android:inputType="phone"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordEditTextLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:boxBackgroundColor="@color/white_color"
+        app:layout_constraintTop_toBottomOf="@+id/phoneEditTextLayout">
+
+        <com.dentify.dentifycare.views.PasswordEditText
+            android:id="@+id/passwordEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/password"
+            android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck" />
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -100,7 +154,7 @@
         android:textStyle="bold"
         android:textSize="15sp"
         android:textColor="@color/white_color"
-        app:layout_constraintTop_toBottomOf="@id/phoneEditTextLayout" />
+        app:layout_constraintTop_toBottomOf="@id/passwordEditTextLayout" />
 
     <RadioGroup
         android:id="@+id/roleUserGroup"
@@ -145,17 +199,32 @@
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_logout"
-        android:layout_width="match_parent"
+        android:id="@+id/btn_next"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/button_shape"
         android:backgroundTint="@color/dentifycare_second_color"
         android:text="@string/next"
         android:textAllCaps="false"
         android:textColor="@color/white_color"
-        android:layout_marginStart="22dp"
         android:textSize="20sp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        android:layout_marginStart="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginTop="35dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/roleUserGroup" />
+
+    <TextView
+        android:id="@+id/tv_login_now"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/already_have_an_account"
+        android:textStyle="bold"
+        android:textSize="15sp"
+        android:textColor="@color/white_color"
+        app:layout_constraintStart_toStartOf="@id/btn_next"
+        app:layout_constraintEnd_toEndOf="@id/btn_next"
+        app:layout_constraintTop_toBottomOf="@id/btn_next" />
 </androidx.constraintlayout.widget.ConstraintLayout>

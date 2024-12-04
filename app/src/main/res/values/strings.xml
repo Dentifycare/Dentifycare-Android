@@ -90,14 +90,13 @@
     <string name="separator">|</string>
     <string name="booked_now">Book Now</string>
     <string name="your_order_confirmation">Your Order Confirmation</string>
-    <string name="desc_login">Login to acces your account</string>
+    <string name="desc_login">Enter your email and password to access your account</string>
     <string name="hello_again">Hello Again!</string>
-    <string name="login_with">Login With :</string>
     <string name="new_to_dentify_care">New to Dentify Care?</string>
     <string name="register_with">Register with </string>
     <string name="google_account">Google Account</string>
     <string name="detail_account">Detail Account</string>
-    <string name="desc_detail">Fill your detail account now for affordable dental care, find patients, and solve your dental problems!</string>
+    <string name="desc_detail">Sign up now for affordable dental care, find patients, and solve your dental problems!</string>
     <string name="name">Name</string>
     <string name="whatsapp_number">Whatsapp Number</string>
     <string name="choose_your_role">Choose Your Role</string>
@@ -112,4 +111,11 @@
     <string name="choose_options">Choose Options</string>
     <string name="no_gallery">No image selected</string>
     <string name="no_image">No images are recorded</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="now_to_dentifycare">Now to Dentifycare?</string>
+    <string name="register">Register</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="create_account">Create Account</string>
 </resources>
