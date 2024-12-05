@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.AnalyzeActivity">
+    tools:context=".ui.home.analyze.AnalyzeActivity">
 
     <ImageView
         android:id="@+id/img_result"

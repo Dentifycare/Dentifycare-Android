@@ -1,4 +1,4 @@
-package com.dentify.dentifycare.ui.home
+package com.dentify.dentifycare.ui.home.booked
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

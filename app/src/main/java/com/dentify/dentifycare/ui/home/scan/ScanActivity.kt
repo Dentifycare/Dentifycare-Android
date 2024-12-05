@@ -1,5 +1,6 @@
 package com.dentify.dentifycare.ui.home.scan
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
@@ -14,6 +15,8 @@ import androidx.core.view.WindowInsetsCompat
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityScanBinding
 import com.dentify.dentifycare.databinding.DialogUploadOptionsBinding
+import com.dentify.dentifycare.ui.home.analyze.AnalyzeFoundActivity
+import com.dentify.dentifycare.ui.home.analyze.AnalyzeNotFoundActivity
 import com.dentify.dentifycare.utils.ImageHelper.getImageUri
 
 class ScanActivity : AppCompatActivity() {
@@ -108,5 +111,17 @@ class ScanActivity : AppCompatActivity() {
             }
             Toast.makeText(this, getString(R.string.no_image), Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun navigationToFoundActivity() {
+        val intent = Intent(this, AnalyzeFoundActivity::class.java)
+        startActivity(intent)
+        finish()
+    }
+
+    private fun navigationToNotFoundActivity() {
+        val intent = Intent(this, AnalyzeNotFoundActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }

@@ -2,6 +2,7 @@ package com.dentify.dentifycare.ui.register
 
 import android.content.Intent
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -11,6 +12,8 @@ import com.dentify.dentifycare.ui.login.LoginActivity
 
 class FormCoAssActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFormCoAssBinding
+
+    private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

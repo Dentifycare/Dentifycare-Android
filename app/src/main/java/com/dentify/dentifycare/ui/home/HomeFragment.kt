@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dentify.dentifycare.databinding.FragmentHomeBinding
+import com.dentify.dentifycare.ui.home.news.NewsActivity
 import com.dentify.dentifycare.ui.home.scan.ScanActivity
 
 class HomeFragment : Fragment() {

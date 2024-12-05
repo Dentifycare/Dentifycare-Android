@@ -13,7 +13,7 @@
         android:theme="@style/Theme.Dentifycare"
         tools:targetApi="31">
         <activity
-            android:name=".ui.home.NewsActivity"
+            android:name=".ui.home.news.NewsActivity"
             android:exported="false" />
         <activity
             android:name=".ui.register.FormCoAssActivity"
@@ -25,19 +25,19 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.ConfirmationBookedActivity"
+            android:name=".ui.home.booked.ConfirmationBookedActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.DetailBookedActivity"
+            android:name=".ui.home.booked.DetailBookedActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.AnalyzeFoundActivity"
+            android:name=".ui.home.analyze.AnalyzeFoundActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.AnalyzeNotFoundActivity"
+            android:name=".ui.home.analyze.AnalyzeNotFoundActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.AnalyzeActivity"
+            android:name=".ui.home.analyze.AnalyzeActivity"
             android:exported="false" />
         <activity
             android:name=".ui.home.scan.ScanActivity"
@@ -64,7 +64,7 @@
             android:name=".ui.activity.patient.FeedbackPageActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.ConfirmationAcceptedActivity"
+            android:name=".ui.home.booked.ConfirmationAcceptedActivity"
             android:exported="false" />
         <activity
             android:name=".ui.profile.ChangeInformationActivity"
