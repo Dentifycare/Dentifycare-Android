@@ -19,6 +19,21 @@ The Dentifycare mobile app is built using the following technologies:
 - **Glide**: A powerful image loading and caching library for displaying images in the app.
 - **Retrofit**: A type-safe HTTP client for making network requests with `converter.gson` for JSON serialization and deserialization, and `logging.interceptor` for logging HTTP request/response details.
 
+## Compatibility
+The Dentifycare app supports devices with the following Android versions:
+
+- **Minimum SDK/API Level**: 24 (Codename: Nougat)
+- **Maximum SDK/API Level**: 34 (Codename: Upside Down Cake)
+
+## Permissions
+This app requires access to the following features and data:
+
+- **Wi-Fi Connection Information**: For accessing the internet.
+- **Photos/Media/Files**: To upload and display media content.
+- **Camera**: For capturing images directly within the app.
+- **Location**: For location-based features (if applicable).
+- **Storage**: For saving and retrieving files locally.
+
 ## API Mobile Documentation
 For detailed information about the Dentifycare API, please refer to the following documentation: [API Mobile Documentation](link-to-detailed-api-doc).
 
