@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -74,6 +75,16 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
+
+    // Firebase for Google services
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
+    // Firebase Auth
+    implementation(libs.firebase.auth)
+
+    // Firebase Cloud Firestore
+    implementation(libs.firebase.firestore)
 
     // Unit testing library for testing application logic
     testImplementation(libs.junit)

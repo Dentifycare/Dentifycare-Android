@@ -127,6 +127,7 @@
         app:boxCornerRadiusBottomEnd="10dp"
         app:boxCornerRadiusTopEnd="10dp"
         app:boxCornerRadiusTopStart="10dp"
+        app:endIconMode="password_toggle"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -227,4 +228,14 @@
         app:layout_constraintStart_toStartOf="@id/btn_next"
         app:layout_constraintEnd_toEndOf="@id/btn_next"
         app:layout_constraintTop_toBottomOf="@id/btn_next" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,9 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val name = arguments?.getString("NAME")
+        binding.tvNameUser.text = name
+
         binding.btnReadNews.setOnClickListener {
             navigationToNews()
         }

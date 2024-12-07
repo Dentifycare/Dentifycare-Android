@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "14769061448",
+    "project_id": "dentifycare-86db5",
+    "storage_bucket": "dentifycare-86db5.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:14769061448:android:00d059efb4a68e109e227d",
+        "android_client_info": {
+          "package_name": "com.dentify.dentifycare"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAzDzd0smfBUL85k5br3-YKBMoBPv8uYgE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

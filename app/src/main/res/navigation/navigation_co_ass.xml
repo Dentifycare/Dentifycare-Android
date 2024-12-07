@@ -2,7 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+    android:id="@+id/coass_navigation"
     app:startDestination="@+id/navigation_home">
 
     <fragment
@@ -13,13 +13,13 @@
 
     <fragment
         android:id="@+id/navigation_activity"
-        android:name="com.dentify.dentifycare.ui.activity.patient.ActivityPatientFragment"
+        android:name="com.dentify.dentifycare.ui.activity.coass.FragmentActivityCoAss"
         android:label="@string/title_activity"
-        tools:layout="@layout/fragment_activity_patient" />
+        tools:layout="@layout/fragment_activity_co_ass" />
 
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.dentify.dentifycare.ui.profile.ProfileFragment"
         android:label="@string/title_profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile"/>
 </navigation>

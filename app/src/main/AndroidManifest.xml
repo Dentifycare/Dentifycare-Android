@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,6 +15,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Dentifycare"
         tools:targetApi="31">
+        <activity
+            android:name=".ui.SplashActivity"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.home.news.NewsDetailActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.home.news.NewsActivity"
             android:exported="false" />
@@ -43,17 +58,11 @@
             android:name=".ui.home.scan.ScanActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.intro.IntroActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
         <activity
             android:name=".ui.activity.coass.PostActivity"
             android:exported="false" />
@@ -65,9 +74,6 @@
             android:exported="false" />
         <activity
             android:name=".ui.home.booked.ConfirmationAcceptedActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.profile.ChangeInformationActivity"
             android:exported="false" />
     </application>
 
