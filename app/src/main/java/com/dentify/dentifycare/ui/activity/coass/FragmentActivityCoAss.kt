@@ -1,5 +1,6 @@
 package com.dentify.dentifycare.ui.activity.coass
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -24,5 +25,18 @@ class FragmentActivityCoAss : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding.fabPost.setOnClickListener {
+            addPostCoAss()
+        }
+    }
+
+    private fun addPostCoAss() {
+        val intent = Intent(requireContext(), PostActivity::class.java)
+        startActivity(intent)
     }
 }
