@@ -6,7 +6,15 @@
 Welcome to Dentifycare, a mobile application designed to assist both dental assistants and the general public.
 
 ## About the Project
-Tambahkan teks disini.
+Dentifycare is a comprehensive mobile application developed to bridge the gap between dental professionals and patients, providing an accessible and user-friendly platform for dental care management.  
+
+Key features of the app include:  
+- **AI-Driven Diagnosis**: Leveraging machine learning models for early detection and classification of dental conditions.  
+- **User Authentication and Data Security**: Powered by **Firebase Authentication**, ensuring secure access for users.  
+- **Real-Time Data Management**: Utilizing **Cloud Firestore** for a scalable and efficient NoSQL database to manage user data and activity logs.  
+- **Seamless Connectivity**: Integrated with APIs deployed by our Cloud Computing team to deliver robust backend support.  
+
+This project is a capstone initiative under the **Bangkit Academy 2024** program, designed to address real-world challenges with cutting-edge technology and interdisciplinary collaboration.
 
 ## Mobile Tech Stack
 The Dentifycare mobile app is built using the following technologies:
@@ -18,6 +26,8 @@ The Dentifycare mobile app is built using the following technologies:
 - **Image Orientation Handling**: A feature that ensures images are displayed correctly by automatically adjusting their orientation based on metadata.
 - **Glide**: A powerful image loading and caching library for displaying images in the app.
 - **Retrofit**: A type-safe HTTP client for making network requests with `converter.gson` for JSON serialization and deserialization, and `logging.interceptor` for logging HTTP request/response details.
+- **Firebase Authentication**: Provides secure user authentication and session management.
+- **Cloud Firestore**: A NoSQL cloud database for real-time data storage and retrieval.
 
 ## Compatibility
 The Dentifycare app supports devices with the following Android versions:
@@ -35,7 +45,7 @@ This app requires access to the following features and data:
 - **Storage**: For saving and retrieving files locally.
 
 ## API Mobile Documentation
-For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](link-to-detailed-api-doc). Additionally, the Mobile Development Team uses Firebase to build NoSQL-based Authentication and Database [Firebase Docs](https://firebase.google.com/docs).
+For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](link-to-detailed-api-doc).
 
 ## Project Installation Guide
 To install and run the Dentifycare mobile app on your local machine, follow the steps below:
@@ -43,14 +53,3 @@ To install and run the Dentifycare mobile app on your local machine, follow the 
 1. **Clone the project repository from GitHub:**
    ```bash
    git clone https://github.com/Dentifycare/Dentifycare-Android.git
-
-2. **Open the project in Android Studio:**
-- Open Android Studio and select "Open an existing project."
-- Navigate to the folder where you cloned the repository and select it.
-
-3. **Build and run the app on an emulator or physical device:**
-Click the "Run" button in Android Studio to build and run the app.
-
-## UI Design
-To view the user interface design for Dentifycare, please visit the following Figma link:  
-[View UI Design on Figma](https://www.figma.com/design/M0OmDVNrtyiXCEr3qDBVgu/Dentifycare---For-Bangkit-App?node-id=0-1&t=zyYE8Wz9fJQawZL2-1)
