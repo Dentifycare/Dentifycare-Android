@@ -45,7 +45,7 @@ This app requires access to the following features and data:
 - **Storage**: For saving and retrieving files locally.
 
 ## API Mobile Documentation
-For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](link-to-detailed-api-doc).
+For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](https://dentifycare-ml-api-363002036886.asia-southeast2.run.app/docs).
 
 ## Project Installation Guide
 To install and run the Dentifycare mobile app on your local machine, follow the steps below:
