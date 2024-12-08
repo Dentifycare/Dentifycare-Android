@@ -35,7 +35,7 @@ This app requires access to the following features and data:
 - **Storage**: For saving and retrieving files locally.
 
 ## API Mobile Documentation
-For detailed information about the Dentifycare API, please refer to the following documentation: [API Mobile Documentation](link-to-detailed-api-doc).
+For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](link-to-detailed-api-doc). Additionally, the Mobile Development Team uses Firebase to build NoSQL-based Authentication and Database [Firebase Docs](https://firebase.google.com/docs).
 
 ## Project Installation Guide
 To install and run the Dentifycare mobile app on your local machine, follow the steps below:
