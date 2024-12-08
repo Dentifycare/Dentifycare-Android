@@ -66,8 +66,8 @@ class ProfileFragment : Fragment() {
 
     private fun logOut() {
         AlertDialog.Builder(requireContext()).apply {
-            setTitle("Konfirmasi Logout")
-            setMessage("Apakah Anda yakin ingin keluar?")
+            setTitle("Confirm Logout")
+            setMessage("Are you sure you want to leave?")
             setPositiveButton("Ya") { _, _ ->
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(requireContext(), LoginActivity::class.java)

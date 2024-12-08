@@ -1,4 +1,4 @@
-package com.dentify.dentifycare.ui.home.news
+package com.dentify.dentifycare.adapter
 
 import android.content.Intent
 import android.view.LayoutInflater
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.dentify.dentifycare.data.local.News
 import com.dentify.dentifycare.databinding.ItemNewsBinding
+import com.dentify.dentifycare.ui.home.news.NewsDetailActivity
 import com.dentify.dentifycare.utils.NewsDiffCallback
 
 class NewsAdapter(private var news: List<News>): RecyclerView.Adapter<NewsAdapter.ListViewHolder>() {

@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.dentify.dentifycare.adapter.NewsAdapter
 import com.dentify.dentifycare.data.local.News
 import com.dentify.dentifycare.databinding.ActivityNewsBinding
 import com.google.firebase.firestore.FirebaseFirestore

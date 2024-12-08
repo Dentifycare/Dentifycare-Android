@@ -1,6 +1,7 @@
 package com.dentify.dentifycare.ui.activity.coass
 
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +10,10 @@ import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityPostBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
+import java.util.UUID
 
 class PostActivity : AppCompatActivity() {
     private lateinit var binding: ActivityPostBinding
@@ -30,6 +35,7 @@ class PostActivity : AppCompatActivity() {
     }
 
     private fun uploadPost() {
+        binding.progressBar.visibility = View.VISIBLE
         val user = FirebaseAuth.getInstance().currentUser
 
         if (user == null) {
@@ -37,57 +43,72 @@ class PostActivity : AppCompatActivity() {
             return
         }
 
-        val userRole = getUserRole(user.uid)
-
-        if (userRole != "CoAss") {
-            Toast.makeText(this, "You are not a CoAss!", Toast.LENGTH_SHORT).show()
-            return
-        }
-
+        val email = user.email
+        val uid = user.uid
+        val status = "Uncompleted"
         val name = binding.nameEditText.text.toString()
         val hospital = binding.hospitalEditText.text.toString()
         val city = binding.cityEditText.text.toString()
         val province = binding.provinceEditText.text.toString()
         val quota = binding.quotaEditText.text.toString()
         val additionalInfo = binding.informationEditText.text.toString()
+        val currentDate = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date())
 
         val selectedSkills = mutableListOf<String>()
-        if (binding.rbCarries.isChecked) selectedSkills.add("carries")
+        if (binding.rbCarries.isChecked) selectedSkills.add("caries")
         if (binding.rbCalculus.isChecked) selectedSkills.add("calculus")
         if (binding.rbGingivitis.isChecked) selectedSkills.add("gingivitis")
         if (binding.rbUlcers.isChecked) selectedSkills.add("ulcers")
         if (binding.rbHypodontia.isChecked) selectedSkills.add("hypodontia")
         if (binding.rbToothDiscoloration.isChecked) selectedSkills.add("tooth_discoloration")
 
-        val postData = hashMapOf(
-            "name" to name,
-            "hospital" to hospital,
-            "city" to city,
-            "province" to province,
-            "quota" to quota,
-            "additionalInfo" to additionalInfo,
-            "selectedSkills" to selectedSkills
-        )
+        val selectedHours = mutableListOf<String>()
+        if (binding.rbHours1.isChecked) selectedHours.add(getString(R.string.example_hours))
+        if (binding.rbHours2.isChecked) selectedHours.add(getString(R.string.example_hours_2))
+        if (binding.rbHours3.isChecked) selectedHours.add(getString(R.string.example_hours_3))
 
-        db.collection("posts").add(postData)
-            .addOnSuccessListener {
-                Toast.makeText(this, "Post uploaded successfully!", Toast.LENGTH_SHORT).show()
-                finish()
+        val userRef = db.collection("users").document(uid)
+        userRef.get()
+            .addOnSuccessListener { document ->
+                if (document != null && document.exists()) {
+                    val phoneNumber = document.getString("phone")
+
+                    val postId = UUID.randomUUID().toString()
+                    val postData = hashMapOf(
+                        "postId" to postId,
+                        "email" to email,
+                        "uid" to uid,
+                        "phone" to phoneNumber,
+                        "status" to status,
+                        "name" to name,
+                        "hospital" to hospital,
+                        "city" to city,
+                        "province" to province,
+                        "quota" to quota,
+                        "additionalInfo" to additionalInfo,
+                        "currentDate" to currentDate,
+                        "selectedSkills" to selectedSkills,
+                        "selectedHours" to selectedHours
+                    )
+
+                    db.collection("posts").add(postData)
+                        .addOnSuccessListener {
+                            Toast.makeText(this, "Post uploaded successfully!", Toast.LENGTH_SHORT).show()
+                            binding.progressBar.visibility = View.GONE
+                            finish()
+                        }
+                        .addOnFailureListener {
+                            Toast.makeText(this, "Failed to upload post!", Toast.LENGTH_SHORT).show()
+                        }
+                } else {
+                    Toast.makeText(this, "User data not found!", Toast.LENGTH_SHORT).show()
+                    binding.progressBar.visibility = View.GONE
+                }
             }
             .addOnFailureListener {
-                Toast.makeText(this, "Failed to upload post!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Failed to get user phone number!", Toast.LENGTH_SHORT).show()
+                binding.progressBar.visibility = View.GONE
             }
     }
 
-    private fun getUserRole(userId: String): String {
-        var role = "none"
-        val dbUser = db.collection("users").document(userId)
-
-        dbUser.get().addOnSuccessListener { document ->
-            if (document.exists()) {
-                role = document.getString("role") ?: "none"
-            }
-        }
-        return role
-    }
 }
