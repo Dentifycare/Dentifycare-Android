@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,199 +7,207 @@
     android:layout_height="match_parent"
     tools:context=".ui.home.booked.DetailBookedActivity">
 
-    <ImageView
-        android:id="@+id/img_doctor"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:layout_marginStart="35dp"
-        android:layout_marginEnd="35dp"
-        android:scaleType="fitXY"
-        android:src="@drawable/ic_launcher_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tv_name_co_ass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/example_name_coass"
-        android:textColor="@color/black_color"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_doctor" />
-
-    <TextView
-        android:id="@+id/tv_title_hospital"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_hospital"
-        android:textColor="@color/black_color"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@+id/tv_name_co_ass"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name_co_ass" />
-
-    <TextView
-        android:id="@+id/tv_skill"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/tooth_discoloration"
-        android:textColor="@color/dentifycare_main_color"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="@id/tv_title_hospital"
-        app:layout_constraintTop_toBottomOf="@+id/tv_title_hospital" />
-
-
-    <ImageView
-        android:id="@+id/img_star"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginEnd="6dp"
-        android:src="@drawable/star_image"
-        app:layout_constraintBottom_toBottomOf="@+id/tv_title_hospital"
-        app:layout_constraintEnd_toStartOf="@id/rating_co_ass"
-        app:layout_constraintTop_toTopOf="@+id/tv_name_co_ass" />
-
-    <TextView
-        android:id="@+id/rating_co_ass"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:text="@string/example_rate"
-        android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/img_star"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/img_star"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/additional_information"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/additional_information"
-        android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@id/tv_skill"
-        app:layout_constraintTop_toBottomOf="@id/tv_skill" />
-
-    <TextView
-        android:id="@+id/additional_information_value"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="40dp"
-        android:justificationMode="inter_word"
-        android:text="@string/example_information_co_ass"
-        android:textColor="@color/black_color"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/additional_information"
-        tools:targetApi="o" />
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/your_booking_dated"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/operational_date"
-        android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/additional_information_value" />
+        <ImageView
+            android:id="@+id/img_doctor"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:layout_marginStart="35dp"
+            android:layout_marginEnd="35dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/doctor_result_image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/booking_dated"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/example_date"
-        android:textColor="@color/black_color"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/your_booking_dated" />
+        <TextView
+            android:id="@+id/tv_name_co_ass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/example_name_coass"
+            android:textColor="@color/black_color"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_doctor" />
 
-    <TextView
-        android:id="@+id/your_booking_hours"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/operational_hours"
-        android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/booking_dated" />
+        <TextView
+            android:id="@+id/tv_title_hospital"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/example_hospital"
+            android:textColor="@color/black_color"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_name_co_ass"
+            app:layout_constraintTop_toBottomOf="@+id/tv_name_co_ass" />
 
-    <TextView
-        android:id="@+id/booking_hours"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="40dp"
-        android:text="@string/example_hours"
-        android:textColor="@color/black_color"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/your_booking_hours" />
+        <TextView
+            android:id="@+id/tv_skill"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tooth_discoloration"
+            android:textColor="@color/dentifycare_main_color"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/tv_title_hospital"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title_hospital" />
 
-    <TextView
-        android:id="@+id/remaining_quota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:text="@string/remaining_quota"
-        android:textColor="@color/black_color"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toTopOf="@id/btn_book"
-        app:layout_constraintStart_toStartOf="@id/booking_hours" />
 
-    <TextView
-        android:id="@+id/remaining_quota_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:text="@string/example_queue"
-        android:textColor="@color/black_color"
-        android:textSize="15sp"
-        app:layout_constraintBottom_toBottomOf="@id/remaining_quota"
-        app:layout_constraintStart_toEndOf="@id/remaining_quota"
-        app:layout_constraintTop_toTopOf="@id/remaining_quota" />
+        <ImageView
+            android:id="@+id/img_star"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="6dp"
+            android:src="@drawable/star_image"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_title_hospital"
+            app:layout_constraintEnd_toStartOf="@id/rating_co_ass"
+            app:layout_constraintTop_toTopOf="@+id/tv_name_co_ass" />
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btn_book"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="30dp"
-        android:background="@drawable/button_shape"
-        android:backgroundTint="@color/dentifycare_button_red_color"
-        android:text="@string/booked_now"
-        android:textAllCaps="false"
-        android:textColor="@color/white_color"
-        android:textSize="20sp"
+        <TextView
+            android:id="@+id/rating_co_ass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="40dp"
+            android:text="@string/example_rate"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/img_star"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/img_star"
+            app:layout_constraintVertical_bias="1.0" />
 
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <TextView
+            android:id="@+id/additional_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/additional_information"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_skill"
+            app:layout_constraintTop_toBottomOf="@id/tv_skill" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/additional_information_value"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:justificationMode="inter_word"
+            android:text="@string/example_information_co_ass"
+            android:textColor="@color/black_color"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/additional_information"
+            tools:targetApi="o" />
+
+        <TextView
+            android:id="@+id/your_booking_dated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/operational_date"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/additional_information_value" />
+
+        <TextView
+            android:id="@+id/booking_dated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/example_date"
+            android:textColor="@color/black_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/your_booking_dated" />
+
+        <TextView
+            android:id="@+id/your_booking_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/operational_hours"
+            android:textColor="@color/black_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/booking_dated" />
+
+        <TextView
+            android:id="@+id/booking_hours"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="40dp"
+            android:text="@string/example_hours"
+            android:textColor="@color/black_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/your_booking_hours" />
+
+        <TextView
+            android:id="@+id/remaining_quota"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/remaining_quota"
+            android:textColor="@color/black_color"
+            android:textSize="15sp"
+            android:layout_marginTop="45dp"
+            app:layout_constraintBottom_toBottomOf="@id/btn_book"
+            app:layout_constraintTop_toBottomOf="@id/booking_hours"
+            app:layout_constraintStart_toStartOf="@id/booking_hours" />
+
+        <TextView
+            android:id="@+id/remaining_quota_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="@string/example_queue"
+            android:textColor="@color/black_color"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@id/remaining_quota"
+            app:layout_constraintStart_toEndOf="@id/remaining_quota"
+            app:layout_constraintTop_toTopOf="@id/remaining_quota" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_book"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="22dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/button_shape"
+            android:backgroundTint="@color/dentifycare_button_red_color"
+            android:text="@string/booked_now"
+            android:textAllCaps="false"
+            android:textColor="@color/white_color"
+            android:textSize="20sp"
+            app:layout_constraintTop_toBottomOf="@id/remaining_quota"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

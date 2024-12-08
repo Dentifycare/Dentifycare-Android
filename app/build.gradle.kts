@@ -19,7 +19,11 @@ android {
     }
 
     buildTypes {
+        debug {
+            buildConfigField("String", "BASE_URL", "\"https://dentifycare-ml-api-363002036886.asia-southeast2.run.app\"")
+        }
         release {
+            buildConfigField("String", "BASE_URL", "\"https://dentifycare-ml-api-363002036886.asia-southeast2.run.app\"")
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
