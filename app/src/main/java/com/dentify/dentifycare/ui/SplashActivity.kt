@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dentify.dentifycare.R
+import com.dentify.dentifycare.ui.intro.IntroActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -39,6 +40,10 @@ class SplashActivity : AppCompatActivity() {
                         finish()
                     }
                 }
+        } else {
+            val intent = Intent(this, IntroActivity::class.java)
+            startActivity(intent)
+            finish()
         }
 
         @Suppress("DEPRECATION")
