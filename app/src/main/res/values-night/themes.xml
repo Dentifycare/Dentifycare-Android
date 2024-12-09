@@ -2,7 +2,7 @@
     <!-- Base application theme. -->
     <style name="Theme.Dentifycare" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="android:statusBarColor">#0F1416</item>
+        <item name="android:statusBarColor">#F5FAFD</item>
 
         <item name="colorPrimary">@color/md_theme_primary</item>
         <item name="colorOnPrimary">@color/md_theme_onPrimary</item>

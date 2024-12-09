@@ -96,6 +96,11 @@ class RegisterActivity : AppCompatActivity() {
                     Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
+            .addOnFailureListener {
+                binding.progressBar.visibility = View.GONE
+                val errorMessage = it.message ?: "Registrasi gagal!"
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
+            }
     }
 
     private fun handleNavigation() {

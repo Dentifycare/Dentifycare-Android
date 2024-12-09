@@ -60,8 +60,13 @@ class LoginActivity : AppCompatActivity() {
                             Toast.makeText(this, "User ID is null", Toast.LENGTH_SHORT).show()
                         }
                     } else {
+                        binding.progressBar.visibility = View.GONE
                         Toast.makeText(this, "Login failed", Toast.LENGTH_SHORT).show()
                     }
+                }
+                .addOnFailureListener {
+                    binding.progressBar.visibility = View.GONE
+                    Toast.makeText(this, "Login failed: ${it.message}", Toast.LENGTH_SHORT).show()
                 }
         }
     }
@@ -92,6 +97,7 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
             .addOnFailureListener { exception ->
+                binding.progressBar.visibility = View.GONE
                 Toast.makeText(this, "Failed to fetch role: ${exception.message}", Toast.LENGTH_SHORT).show()
             }
     }

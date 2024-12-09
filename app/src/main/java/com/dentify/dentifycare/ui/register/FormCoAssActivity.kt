@@ -69,19 +69,25 @@ class FormCoAssActivity : AppCompatActivity() {
                         db.collection("users").document(userId).set(userData)
                             .addOnSuccessListener {
                                 binding.progressBar.visibility = View.GONE
-                                Toast.makeText(this, "Registrasi berhasil!", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Registrasi Succeed!", Toast.LENGTH_SHORT).show()
                                 navigationToLogin()
                             }
                             .addOnFailureListener { e ->
-                                val errorMessage = "Gagal menyimpan data: ${e.message}"
+                                val errorMessage = "Failed to save data: ${e.message}"
                                 Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                             }
 
                     }
                 } else {
-                    val errorMessage = task.exception?.message ?: "Registrasi gagal!"
+                    val errorMessage = task.exception?.message ?: "Registrasi Failed!"
                     Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                 }
+            }
+
+            .addOnFailureListener {
+                binding.progressBar.visibility = View.GONE
+                val errorMessage = it.message ?: "Registrasi Failed!"
+                Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
             }
     }
 

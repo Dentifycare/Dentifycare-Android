@@ -57,6 +57,7 @@
             android:id="@+id/nameEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black_color"
             android:ems="10"
             android:hint="@string/name"
             android:inputType="textPersonName"
@@ -85,6 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/black_color"
             android:hint="@string/email"
             android:inputType="textPersonName"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -112,6 +114,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/black_color"
             android:hint="@string/whatsapp_number"
             android:inputType="phone"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -140,6 +143,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
+            android:textColor="@color/black_color"
             android:hint="@string/password"
             android:inputType="textPassword"
             tools:ignore="SpeakableTextPresentCheck" />
