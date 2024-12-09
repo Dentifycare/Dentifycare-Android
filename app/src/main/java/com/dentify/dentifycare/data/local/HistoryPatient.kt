@@ -2,6 +2,7 @@ package com.dentify.dentifycare.data.local
 
 data class HistoryPatient(
     val historyID: String? = "",
+    val postId: String? = "",
     val idUser: String? = "",
     val yourName: String? = "",
     val nameCoAss: String? = "",

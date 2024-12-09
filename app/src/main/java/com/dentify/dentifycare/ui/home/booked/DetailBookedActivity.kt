@@ -2,7 +2,6 @@ package com.dentify.dentifycare.ui.home.booked
 
 import android.content.Intent
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -24,6 +23,7 @@ class DetailBookedActivity : AppCompatActivity() {
     private var additionalInformation: String? = null
     private var phone: String? = null
     private var phoneCoAss: String? = null
+    private var postId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -91,7 +91,8 @@ class DetailBookedActivity : AppCompatActivity() {
             putExtra("EXTRA_PHONE", phone)
             phoneCoAss = intent.getStringExtra("EXTRA_PHONE_Co_Ass")
             putExtra("EXTRA_Phone_Co_Ass", phoneCoAss)
-            Log.d("CEKPHONE", phoneCoAss ?: "")
+            postId = intent.getStringExtra("EXTRA_POST_ID")
+            putExtra("EXTRA_POST_ID", postId)
         }
         startActivity(intent)
     }

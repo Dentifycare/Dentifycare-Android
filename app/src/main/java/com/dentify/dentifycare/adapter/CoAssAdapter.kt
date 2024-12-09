@@ -32,6 +32,8 @@ class CoAssAdapter(private var post: List<CoAssBooked>): RecyclerView.Adapter<Co
         holder.itemView.setOnClickListener {
             val context = it.context
             val intent = Intent(context, DetailBookedActivity::class.java).apply {
+                putExtra("EXTRA_POST_ID", postCoAss.postId)
+                Log.d("CHECKPOSTID", postCoAss.postId)
                 putExtra("EXTRA_NAME", postCoAss.name)
                 putExtra("EXTRA_HOSPITAL", postCoAss.hospital)
                 putExtra("EXTRA_SKILL", postCoAss.selectedSkills[0])
@@ -39,7 +41,6 @@ class CoAssAdapter(private var post: List<CoAssBooked>): RecyclerView.Adapter<Co
                 putExtra("EXTRA_OPERATIONAL_DATE", postCoAss.currentDate)
                 putExtra("EXTRA_OPERATIONAL_HOURS", postCoAss.selectedHours[0])
                 putExtra("EXTRA_PHONE_Co_Ass", postCoAss.phone)
-                Log.d("CEKPHONE", postCoAss.phone)
                 putExtra("EXTRA_REMAINING_QUOTA", postCoAss.quota)
                 putExtra("EXTRA_QUOTA", postCoAss.quota)
                 putExtra("EXTRA_PHONE", postCoAss.postId)

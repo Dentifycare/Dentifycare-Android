@@ -45,6 +45,7 @@ class ActivityPatientFragment : Fragment() {
         val idUser = user?.uid ?: return
 
         val db = FirebaseFirestore.getInstance()
+
         db.collection("history")
             .whereEqualTo("idUser", idUser)
             .get()

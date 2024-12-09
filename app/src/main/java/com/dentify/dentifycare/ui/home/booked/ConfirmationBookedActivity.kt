@@ -23,6 +23,7 @@ class ConfirmationBookedActivity : AppCompatActivity() {
     private var operationalHours: String? = null
     private var remainingQuota: String? = null
     private var phoneCoAss: String? = null
+    private var postId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -80,8 +81,10 @@ class ConfirmationBookedActivity : AppCompatActivity() {
         val idUser = user?.uid
         val status = "Uncompleted"
         val historyID = UUID.randomUUID().toString()
+        val postId = intent.getStringExtra("EXTRA_POST_ID")
 
         val historyData = hashMapOf(
+            "postId" to postId,
             "historyID" to historyID,
             "idUser" to idUser,
             "yourName" to yourName,

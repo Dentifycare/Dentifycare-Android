@@ -1,8 +1,12 @@
 package com.dentify.dentifycare.ui.home.booked
 
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -76,13 +80,21 @@ class ConfirmationAcceptedActivity : AppCompatActivity() {
 
         val intent = Intent(Intent.ACTION_VIEW).apply {
             data = Uri.parse(url)
+            flags = Intent.FLAG_ACTIVITY_NEW_TASK
         }
 
-        val returnIntent = Intent(this, MainActivity::class.java).apply {
-            flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-        }
+        try {
+            startActivity(intent)
+            Handler(Looper.getMainLooper()).postDelayed({
+                val mainIntent = Intent(this, MainActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                }
+                startActivity(mainIntent)
+                finish()
+            }, 5000)
 
-        startActivity(intent)
-        startActivity(returnIntent)
+        } catch (e: ActivityNotFoundException) {
+            Toast.makeText(this, "WhatsApp Not Found!", Toast.LENGTH_SHORT).show()
+        }
     }
 }
