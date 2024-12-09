@@ -90,6 +90,9 @@ dependencies {
     // Firebase Cloud Firestore
     implementation(libs.firebase.firestore)
 
+    // uCrop
+    implementation("com.github.yalantis:ucrop:2.2.6")
+
     // Unit testing library for testing application logic
     testImplementation(libs.junit)
 

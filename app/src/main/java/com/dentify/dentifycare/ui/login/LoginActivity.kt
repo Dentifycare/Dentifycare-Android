@@ -42,7 +42,6 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-
     private fun loginUser() {
         val email = binding.emailEditText.text.toString().trim()
         val password = binding.passwordEditText.text.toString().trim()

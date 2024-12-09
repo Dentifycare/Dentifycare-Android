@@ -32,7 +32,6 @@ class FeedbackPageActivity : AppCompatActivity() {
         getData()
     }
 
-
     private fun getData() {
         val nameCoAss = intent.getStringExtra("EXTRA_NAME_Co_Ass")
         val hospital = intent.getStringExtra("EXTRA_HOSPITAL")

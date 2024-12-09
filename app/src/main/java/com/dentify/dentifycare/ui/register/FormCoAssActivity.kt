@@ -69,7 +69,7 @@ class FormCoAssActivity : AppCompatActivity() {
                         db.collection("users").document(userId).set(userData)
                             .addOnSuccessListener {
                                 binding.progressBar.visibility = View.GONE
-                                Toast.makeText(this, "Registrasi Succeed!", Toast.LENGTH_SHORT).show()
+                                Toast.makeText(this, "Registration Succeed!", Toast.LENGTH_SHORT).show()
                                 navigationToLogin()
                             }
                             .addOnFailureListener { e ->
@@ -79,14 +79,14 @@ class FormCoAssActivity : AppCompatActivity() {
 
                     }
                 } else {
-                    val errorMessage = task.exception?.message ?: "Registrasi Failed!"
+                    val errorMessage = task.exception?.message ?: "Registration Failed!"
                     Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
                 }
             }
 
             .addOnFailureListener {
                 binding.progressBar.visibility = View.GONE
-                val errorMessage = it.message ?: "Registrasi Failed!"
+                val errorMessage = it.message ?: "Registration Failed!"
                 Toast.makeText(this, errorMessage, Toast.LENGTH_SHORT).show()
             }
     }

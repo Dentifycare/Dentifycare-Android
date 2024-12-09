@@ -165,37 +165,43 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="45dp"
-                android:text="@string/carries" />
+                android:text="@string/carries"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_calculus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/calculus" />
+                android:text="@string/calculus"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_gingivitis"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/gingivitis" />
+                android:text="@string/gingivitis"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_ulcers"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/ulcers" />
+                android:text="@string/ulcers"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_hypodontia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/hypodontia" />
+                android:text="@string/hypodontia"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_tooth_discoloration"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/tooth_discoloration" />
+                android:text="@string/tooth_discoloration"
+                android:textColor="@color/black_color" />
 
         </GridLayout>
 
@@ -231,19 +237,22 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="45dp"
-                android:text="@string/example_hours" />
+                android:text="@string/example_hours"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_hours_2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/example_hours_2" />
+                android:text="@string/example_hours_2"
+                android:textColor="@color/black_color" />
 
             <RadioButton
                 android:id="@+id/rb_hours_3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/example_hours_3" />
+                android:text="@string/example_hours_3"
+                android:textColor="@color/black_color" />
         </GridLayout>
 
         <com.google.android.material.textfield.TextInputLayout

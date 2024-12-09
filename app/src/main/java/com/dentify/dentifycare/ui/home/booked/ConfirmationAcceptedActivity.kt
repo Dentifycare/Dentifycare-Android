@@ -44,7 +44,6 @@ class ConfirmationAcceptedActivity : AppCompatActivity() {
         val skill = intent.getStringExtra("EXTRA_SKILL")
         val operationalDate = intent.getStringExtra("EXTRA_OPERATIONAL_DATE")
         val operationalHours = intent.getStringExtra("EXTRA_OPERATIONAL_HOURS")
-        val remainingQuota = intent.getStringExtra("EXTRA_REMAINING_QUOTA")
 
         binding.nameOrder.text = yourName
         binding.coAssName.text = nameCoAss
@@ -52,8 +51,6 @@ class ConfirmationAcceptedActivity : AppCompatActivity() {
         binding.diagnosisName.text = skill
         binding.bookingDated.text = operationalDate
         binding.bookingHours.text = operationalHours
-        binding.queue.text = remainingQuota
-
     }
 
     private fun openWhatsApp() {
@@ -63,7 +60,6 @@ class ConfirmationAcceptedActivity : AppCompatActivity() {
         val skill = intent.getStringExtra("EXTRA_SKILL") ?: "Unknown"
         val operationalDate = intent.getStringExtra("EXTRA_OPERATIONAL_DATE") ?: "Unknown"
         val operationalHours = intent.getStringExtra("EXTRA_OPERATIONAL_HOURS") ?: "Unknown"
-        val remainingQuota = intent.getStringExtra("EXTRA_REMAINING_QUOTA") ?: "Unknown"
 
         val message = "Hello, my name is $yourName.\n" +
                 "I have booked a session with Co-Assistant $nameCoAss.\n" +
@@ -71,7 +67,6 @@ class ConfirmationAcceptedActivity : AppCompatActivity() {
                 "Skill: $skill.\n" +
                 "Booking Date: $operationalDate.\n" +
                 "Operational Hours: $operationalHours.\n" +
-                "Remaining Quota: $remainingQuota.\n" +
                 "Looking forward to connecting with you!"
 
         val phoneNumber = phoneCoAss

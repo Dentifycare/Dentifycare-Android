@@ -49,9 +49,6 @@
             android:name=".ui.home.analyze.AnalyzeFoundActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.home.analyze.AnalyzeNotFoundActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.home.analyze.AnalyzeActivity"
             android:exported="false" />
         <activity
@@ -75,6 +72,11 @@
         <activity
             android:name=".ui.home.booked.ConfirmationAcceptedActivity"
             android:exported="false" />
+
+        <activity
+            android:name="com.yalantis.ucrop.UCropActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

@@ -39,6 +39,10 @@ class ProfileFragment : Fragment() {
             openAppSettings(requireContext())
         }
 
+        binding.tvAppSettings.setOnClickListener{
+            openAppSettings(requireContext())
+        }
+
         binding.btnLogout.setOnClickListener {
             logOut()
         }
@@ -68,13 +72,13 @@ class ProfileFragment : Fragment() {
         AlertDialog.Builder(requireContext()).apply {
             setTitle("Confirm Logout")
             setMessage("Are you sure you want to leave?")
-            setPositiveButton("Ya") { _, _ ->
+            setPositiveButton("Yes") { _, _ ->
                 FirebaseAuth.getInstance().signOut()
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
                 requireActivity().finish()
             }
-            setNegativeButton("Batal") { dialog, _ ->
+            setNegativeButton("Cancel") { dialog, _ ->
                 dialog.dismiss()
             }
             create()

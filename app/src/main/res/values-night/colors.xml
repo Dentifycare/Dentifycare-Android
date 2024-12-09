@@ -8,6 +8,7 @@
     <color name="dentifycare_main_color">#0D92F4</color>
     <color name="dentifycare_second_color">#1D3F63</color>
     <color name="dentifycare_button_red_color">#FF0004</color>
+    <color name="dentifycare_rating_color">#2EDD38</color>
 
     <!-- Random Color -->
     <color name="md_theme_primary">#07677F</color>

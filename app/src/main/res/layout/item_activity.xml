@@ -10,7 +10,8 @@
     android:layout_marginBottom="15dp"
     android:layout_marginEnd="8dp"
     android:layout_marginStart="8dp"
-    android:layout_gravity="center">
+    android:layout_gravity="center"
+    android:backgroundTint="@color/white_color">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"

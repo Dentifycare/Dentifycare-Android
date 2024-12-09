@@ -3,6 +3,7 @@ package com.dentify.dentifycare.ui.home.scan
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.result.PickVisualMediaRequest
@@ -21,9 +22,12 @@ import com.dentify.dentifycare.ui.home.analyze.AnalyzeActivity
 import com.dentify.dentifycare.utils.ImageHelper.getImageUri
 import com.dentify.dentifycare.utils.ImageHelper.reduceFileImage
 import com.dentify.dentifycare.utils.ImageHelper.uriToFile
+import com.yalantis.ucrop.UCrop
+import com.yalantis.ucrop.UCropActivity
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
+import java.io.File
 
 class ScanActivity : AppCompatActivity() {
     private lateinit var binding: ActivityScanBinding
@@ -50,14 +54,23 @@ class ScanActivity : AppCompatActivity() {
         }
 
         viewModel.isLoading.observe(this) { isLoading ->
-            if (isLoading) {
-                binding.progressBar.visibility = View.VISIBLE
-            } else {
-                binding.progressBar.visibility = View.GONE
-            }
+            binding.progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
         }
 
-        setUpObserves()
+        viewModel.imageUri.observe(this) { uri ->
+            if (uri != null) {
+                Log.d("ScanActivity", "New Image URI: $uri")
+                binding.imgAnalyze.setImageURI(null) // Reset cache
+                binding.imgAnalyze.setImageURI(uri)
+            } else {
+                binding.imgAnalyze.setImageDrawable(
+                    AppCompatResources.getDrawable(
+                        this,
+                        R.drawable.initiate_ai_image
+                    )
+                )
+            }
+        }
     }
 
     private fun showCustomUploadDialog() {
@@ -80,20 +93,6 @@ class ScanActivity : AppCompatActivity() {
         }
     }
 
-    private fun setUpObserves() {
-        viewModel.imageUri.observe(this) { uri ->
-            if (uri != null) {
-                binding.imgAnalyze.setImageURI(uri)
-            }
-        }
-
-        viewModel.predict.observe(this) {response ->
-            if (response != null) {
-                navigationToAnalyze(response)
-            }
-        }
-    }
-
     private fun startGallery() {
         launcherGallery.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly))
     }
@@ -102,8 +101,7 @@ class ScanActivity : AppCompatActivity() {
         ActivityResultContracts.PickVisualMedia()
     ) { uri: Uri? ->
         if (uri != null) {
-            viewModel.setImageUri(uri)
-            previousImageUri = uri
+            startCrop(uri)
         } else {
             Toast.makeText(this, getString(R.string.no_gallery), Toast.LENGTH_SHORT).show()
         }
@@ -111,6 +109,7 @@ class ScanActivity : AppCompatActivity() {
 
     private fun startCamera() {
         val uri = getImageUri(this)
+        previousImageUri = uri
         viewModel.setImageUri(uri)
         launcherIntentCamera.launch(uri)
     }
@@ -120,7 +119,10 @@ class ScanActivity : AppCompatActivity() {
     ) { isSuccess ->
         if (isSuccess) {
             viewModel.imageUri.value?.let { uri ->
-                binding.imgAnalyze.setImageURI(uri)
+                Log.d("ScanActivity", "Camera URI: $uri")
+                startCrop(uri)
+            } ?: run {
+                Toast.makeText(this, getString(R.string.no_image), Toast.LENGTH_SHORT).show()
             }
         } else {
             viewModel.setImageUri(previousImageUri)
@@ -136,32 +138,67 @@ class ScanActivity : AppCompatActivity() {
         }
     }
 
-    private fun upload() {
-        viewModel.imageUri.value.let { uri ->
-            if (uri != null) {
-                val imageFile = uriToFile(uri, this).reduceFileImage()
-                val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
-                val multipartBody = MultipartBody.Part.createFormData(
-                    "file",
-                    imageFile.name,
-                    requestImageFile
-                )
+    private fun startCrop(sourceUri: Uri) {
+        val destinationUri = Uri.fromFile(File(cacheDir, "cropped_image.jpg"))
 
-                viewModel.getPredict(this, multipartBody) { response ->
-                    if (response != null) {
-                        navigationToAnalyze(response)
-                    } else {
-                        Toast.makeText(this, "Upload Failed", Toast.LENGTH_SHORT).show()
-                    }
-                }
+        val uCrop = UCrop.of(sourceUri, destinationUri)
+            .withAspectRatio(1f, 1f)
+            .withOptions(getCropOptions())
+
+        Log.d("ScanActivity", "Starting crop with URI: $sourceUri")
+
+        launcherCrop.launch(uCrop.getIntent(this))
+    }
+
+    private val launcherCrop = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            val resultUri = UCrop.getOutput(result.data!!)
+            if (resultUri != null) {
+                viewModel.setImageUri(resultUri)
+                binding.imgAnalyze.setImageURI(null)
+                binding.imgAnalyze.setImageURI(resultUri)
+                Log.d("ScanActivity", "Cropped URI: $resultUri")
             }
+        } else {
+            Toast.makeText(this, getString(R.string.crop_failed), Toast.LENGTH_SHORT).show()
         }
     }
 
+    private fun getCropOptions(): UCrop.Options {
+        val options = UCrop.Options()
+        options.setCompressionQuality(80)
+        options.setHideBottomControls(true)
+        options.setFreeStyleCropEnabled(false)
+        options.setAllowedGestures(UCropActivity.ALL, UCropActivity.NONE, UCropActivity.ALL)
+        return options
+    }
+
+    private fun upload() {
+        val uri = viewModel.imageUri.value
+        if (uri != null) {
+            val imageFile = uriToFile(uri, this).reduceFileImage()
+            val requestImageFile = imageFile.asRequestBody("image/jpeg".toMediaType())
+            val multipartBody = MultipartBody.Part.createFormData(
+                "file",
+                imageFile.name,
+                requestImageFile
+            )
+
+            viewModel.getPredict(this, multipartBody) { response ->
+                if (response != null) {
+                    navigationToAnalyze(response)
+                } else {
+                    Toast.makeText(this, "Upload Failed", Toast.LENGTH_SHORT).show()
+                }
+            }
+        } else {
+            Toast.makeText(this, getString(R.string.no_image_selected), Toast.LENGTH_SHORT).show()
+        }
+    }
 
     private fun navigationToAnalyze(response: PredictResponse) {
         val intent = Intent(this, AnalyzeActivity::class.java)
-        intent.putExtra("EXTRA_IMAGE_URI", previousImageUri.toString())
+        intent.putExtra("EXTRA_IMAGE_URI", viewModel.imageUri.value.toString())
         intent.putExtra("EXTRA_DIAGNOSIS", response.diagnosis)
         intent.putExtra("EXTRA_ACCURACY", response.accuracy)
         startActivity(intent)

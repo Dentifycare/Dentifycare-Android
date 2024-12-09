@@ -118,4 +118,6 @@
     <string name="register">Register</string>
     <string name="already_have_an_account">Already have an account?</string>
     <string name="create_account">Create Account</string>
+    <string name="no_image_selected">No images selected</string>
+    <string name="crop_failed">Crop failed, please try again</string>
 </resources>

@@ -69,7 +69,6 @@ class DetailBookedActivity : AppCompatActivity() {
                         binding.additionalInformationValue.text = additionalInformation
                         binding.bookingDated.text = operationalDate
                         binding.bookingHours.text = operationalHours
-                        binding.remainingQuotaValue.text = remainingQuota
 
                         if (role == "CoAss") {
                             binding.btnBook.visibility = View.GONE
@@ -78,7 +77,6 @@ class DetailBookedActivity : AppCompatActivity() {
                 }
         }
     }
-
 
     private fun navigationToConfirmationBooked() {
         val intent = Intent(this, ConfirmationBookedActivity::class.java).apply {

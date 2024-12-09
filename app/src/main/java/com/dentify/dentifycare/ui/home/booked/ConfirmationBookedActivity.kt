@@ -2,6 +2,7 @@ package com.dentify.dentifycare.ui.home.booked
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -21,9 +22,7 @@ class ConfirmationBookedActivity : AppCompatActivity() {
     private var skill: String? = null
     private var operationalDate: String? = null
     private var operationalHours: String? = null
-    private var remainingQuota: String? = null
     private var phoneCoAss: String? = null
-    private var postId: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +57,6 @@ class ConfirmationBookedActivity : AppCompatActivity() {
                         skill = intent.getStringExtra("EXTRA_SKILL")
                         operationalDate = intent.getStringExtra("EXTRA_OPERATIONAL_DATE")
                         operationalHours = intent.getStringExtra("EXTRA_OPERATIONAL_HOURS")
-                        remainingQuota = intent.getStringExtra("EXTRA_REMAINING_QUOTA")
 
                         binding.nameOrder.text = yourName
                         binding.coAssName.text = nameCoAss
@@ -66,8 +64,6 @@ class ConfirmationBookedActivity : AppCompatActivity() {
                         binding.diagnosisName.text = skill
                         binding.bookingDated.text = operationalDate
                         binding.bookingHours.text = operationalHours
-                        binding.queue.text = remainingQuota
-
                     }
                 }
         }
@@ -75,6 +71,7 @@ class ConfirmationBookedActivity : AppCompatActivity() {
 
     private fun navigateToConfirmationAccepted() {
         val db = FirebaseFirestore.getInstance()
+        binding.progressBar.visibility = View.VISIBLE
 
         phoneCoAss = intent.getStringExtra("EXTRA_Phone_Co_Ass")
         val user = FirebaseAuth.getInstance().currentUser
@@ -93,7 +90,6 @@ class ConfirmationBookedActivity : AppCompatActivity() {
             "skill" to skill,
             "operationalDate" to operationalDate,
             "operationalHours" to operationalHours,
-            "remainingQuota" to remainingQuota,
             "phoneCoAss" to phoneCoAss,
             "status" to status
         )
@@ -108,11 +104,11 @@ class ConfirmationBookedActivity : AppCompatActivity() {
                     putExtra("EXTRA_SKILL", skill)
                     putExtra("EXTRA_OPERATIONAL_DATE", operationalDate)
                     putExtra("EXTRA_OPERATIONAL_HOURS", operationalHours)
-                    putExtra("EXTRA_REMAINING_QUOTA", remainingQuota)
                     phoneCoAss = intent.getStringExtra("EXTRA_Phone_Co_Ass")
                     putExtra("EXTRA_Phone_Co_Ass", phoneCoAss)
 
                     Toast.makeText(this@ConfirmationBookedActivity, "Booked Successfully", Toast.LENGTH_SHORT).show()
+                    binding.progressBar.visibility = View.GONE
                 }
                 startActivity(intent)
             }

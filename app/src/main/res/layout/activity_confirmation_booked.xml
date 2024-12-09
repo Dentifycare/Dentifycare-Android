@@ -217,34 +217,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/your_booking_hours"/>
 
-    <TextView
-        android:id="@+id/your_queue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/your_queue"
-        android:textSize="16sp"
-        android:textColor="@color/black_color"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/booking_hours"/>
-
-    <TextView
-        android:id="@+id/queue"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/example_queue"
-        android:textSize="16sp"
-        android:textColor="@color/black_color"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="24dp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/your_queue"/>
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_confirmation_now"
         android:background="@drawable/button_shape"
@@ -261,4 +233,14 @@
         android:textStyle="bold"
         android:textAllCaps="false"
         android:text="@string/booked_now"/>
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

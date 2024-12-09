@@ -24,7 +24,7 @@ class EmailEditText @JvmOverloads constructor(
         super.onTextChanged(text, start, lengthBefore, lengthAfter)
         val email = text.toString()
         if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            setError("Format email tidak valid", null)
+            setError("Invalid email format", null)
             isEmailValid = false
         } else {
             setError(null, null)

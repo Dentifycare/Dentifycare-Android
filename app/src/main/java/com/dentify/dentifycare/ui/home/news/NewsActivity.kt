@@ -40,14 +40,14 @@ class NewsActivity : AppCompatActivity() {
                 binding.progressBar.visibility = View.GONE
                 val newsList = mutableListOf<News>()
                 for (document in documents) {
-                    Log.d("NewsActivity", "Berhasil mendapatkan berita: ${document.data}")
+                    Log.d("NewsActivity", "Successfully received news: ${document.data}")
                     val news = document.toObject(News::class.java)
                     newsList.add(news)
                 }
                 newsAdapter.updateData(newsList)
             }
             .addOnFailureListener { exception ->
-                Log.e("NewsActivity", "Error mendapatkan berita", exception)
+                Log.e("NewsActivity", "Failed to get news", exception)
             }
     }
 }
