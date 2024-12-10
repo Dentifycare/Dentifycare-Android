@@ -22,6 +22,7 @@ The Dentifycare mobile app is built using the following technologies:
 - **Android Studio**: The official IDE for Android app development.
 - **Kotlin Programming Language**: A modern programming language for developing Android apps.
 - **Jetpack Libraries**: A set of libraries that provide essential Android app components, such as lifecycle management, navigation, UI elements, and data management, making development easier and more efficient.
+- Utilize the **MVVM (Model-View-ViewModel)** architecture to ensure a clean, scalable, and maintainable codebase.
 - **CircleImageView**: A library for displaying circular images in the app.
 - **Image Orientation Handling**: A feature that ensures images are displayed correctly by automatically adjusting their orientation based on metadata.
 - **Glide**: A powerful image loading and caching library for displaying images in the app.
