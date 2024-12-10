@@ -53,3 +53,6 @@ To install and run the Dentifycare mobile app on your local machine, follow the 
 1. **Clone the project repository from GitHub:**
    ```bash
    git clone https://github.com/Dentifycare/Dentifycare-Android.git
+
+## APK Release Version
+[Download Dentifycare](https://drive.google.com/file/d/1FfWT6U1nu3Fyde1kIUxR9dWbPEI5T_1o/view?usp=sharing)
