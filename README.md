@@ -1,7 +1,6 @@
 # Dentifycare Mobile App
 
-<img src="https://github.com/Dentifycare/Dentifycare-Android/blob/master/Dentifycare%20-%20Mockup.png" alt="App Mockup"/>
-
+<img src="https://github.com/Dentifycare/Dentifycare-Android/blob/master/icon-app.png?raw=true" alt="App Icon" width="300"/>
 ## Introduction
 Welcome to Dentifycare, a mobile application designed to assist both dental assistants and the general public.
 
