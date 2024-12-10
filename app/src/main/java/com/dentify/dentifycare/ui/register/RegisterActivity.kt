@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityRegisterBinding
 import com.dentify.dentifycare.ui.login.LoginActivity
@@ -41,6 +42,15 @@ class RegisterActivity : AppCompatActivity() {
         }
 
         textButton()
+
+        resultValidate()
+    }
+
+    private fun resultValidate() {
+        binding.emailEditText.addTextChangedListener { validateForm() }
+        binding.passwordEditText.addTextChangedListener { validateForm() }
+        binding.nameEditText.addTextChangedListener { validateForm() }
+        binding.phoneEditText.addTextChangedListener { validateForm() }
     }
 
     private fun textButton() {
@@ -105,9 +115,25 @@ class RegisterActivity : AppCompatActivity() {
 
     private fun handleNavigation() {
         val selectedRoleId = binding.roleUserGroup.checkedRadioButtonId
+        val email = binding.emailEditText.text.toString().trim()
+        val password = binding.passwordEditText.text.toString().trim()
+        val name = binding.nameEditText.text.toString().trim()
+        val phone = binding.phoneEditText.text.toString().trim()
+
+        val isFormValid = email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty()
+
+        if (!isFormValid) {
+            Toast.makeText(this, "Please fill out all fields", Toast.LENGTH_SHORT).show()
+            return
+        }
+
         when (selectedRoleId) {
             R.id.radio_coass -> {
                 val intent = Intent(this,FormCoAssActivity::class.java)
+                intent.putExtra("EMAIL", email)
+                intent.putExtra("PASSWORD", password)
+                intent.putExtra("NAME", name)
+                intent.putExtra("PHONE", phone)
                 startActivity(intent)
             }
             R.id.radio_patient -> {
@@ -123,5 +149,15 @@ class RegisterActivity : AppCompatActivity() {
         val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
+    }
+
+    private fun validateForm() {
+        val email = binding.emailEditText.text.toString().trim()
+        val password = binding.passwordEditText.text.toString().trim()
+        val name = binding.nameEditText.text.toString().trim()
+        val phone = binding.phoneEditText.text.toString().trim()
+
+        val isFormValid = email.isNotEmpty() && password.isNotEmpty() && name.isNotEmpty() && phone.isNotEmpty()
+        binding.btnNext.isEnabled = isFormValid
     }
 }

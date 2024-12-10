@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityLoginBinding
 import com.dentify.dentifycare.ui.MainActivity
@@ -33,13 +34,29 @@ class LoginActivity : AppCompatActivity() {
         @Suppress("DEPRECATION")
         window.statusBarColor = getColor(R.color.dentifycare_main_color)
 
+        binding.emailEditText.addTextChangedListener { validateForm() }
+        binding.passwordEditText.addTextChangedListener { validateForm() }
+
         binding.btnLogin.setOnClickListener {
-            loginUser()
+            if (validateForm()) {
+                loginUser()
+            } else {
+                Toast.makeText(this, "Please fill out email and password", Toast.LENGTH_SHORT).show()
+            }
         }
 
         binding.tvRegister.setOnClickListener {
             navigationToRegister()
         }
+    }
+
+    private fun validateForm(): Boolean {
+        val email = binding.emailEditText.text.toString().trim()
+        val password = binding.passwordEditText.text.toString().trim()
+
+        val isFormValid = email.isNotEmpty() && password.isNotEmpty()
+        binding.btnLogin.isEnabled = isFormValid
+        return isFormValid
     }
 
     private fun loginUser() {

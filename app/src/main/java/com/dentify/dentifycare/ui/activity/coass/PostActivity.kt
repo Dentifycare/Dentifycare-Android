@@ -6,6 +6,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.widget.addTextChangedListener
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityPostBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -29,9 +30,39 @@ class PostActivity : AppCompatActivity() {
             insets
         }
 
+        resultValidation()
+
         binding.btnSubmit.setOnClickListener {
-            uploadPost()
+            if (validateForm()) {
+                uploadPost()
+            } else {
+                Toast.makeText(this, "Please fill in all required fields!", Toast.LENGTH_SHORT).show()
+            }
         }
+    }
+
+    private fun resultValidation() {
+        binding.nameEditText.addTextChangedListener { validateForm() }
+        binding.hospitalEditText.addTextChangedListener { validateForm() }
+        binding.cityEditText.addTextChangedListener { validateForm() }
+        binding.provinceEditText.addTextChangedListener { validateForm() }
+        binding.quotaEditText.addTextChangedListener { validateForm() }
+        binding.informationEditText.addTextChangedListener { validateForm() }
+    }
+
+    private fun validateForm(): Boolean {
+        val name = binding.nameEditText.text.toString().trim()
+        val hospital = binding.hospitalEditText.text.toString().trim()
+        val city = binding.cityEditText.text.toString().trim()
+        val province = binding.provinceEditText.text.toString().trim()
+        val quota = binding.quotaEditText.text.toString().trim()
+        val additionalInfo = binding.informationEditText.text.toString().trim()
+
+        val isFormValid = name.isNotEmpty() && hospital.isNotEmpty() && city.isNotEmpty() &&
+                province.isNotEmpty() && quota.isNotEmpty() && additionalInfo.isNotEmpty()
+
+        binding.btnSubmit.isEnabled = isFormValid
+        return isFormValid
     }
 
     private fun uploadPost() {
