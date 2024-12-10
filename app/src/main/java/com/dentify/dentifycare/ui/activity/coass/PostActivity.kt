@@ -60,12 +60,13 @@ class PostActivity : AppCompatActivity() {
         if (binding.rbGingivitis.isChecked) selectedSkills.add("gingivitis")
         if (binding.rbUlcers.isChecked) selectedSkills.add("ulcers")
         if (binding.rbHypodontia.isChecked) selectedSkills.add("hypodontia")
-        if (binding.rbToothDiscoloration.isChecked) selectedSkills.add("tooth_discoloration")
+        if (binding.rbToothDiscoloration.isChecked) selectedSkills.add("tooth discoloration")
 
         val selectedHours = mutableListOf<String>()
         if (binding.rbHours1.isChecked) selectedHours.add(getString(R.string.example_hours))
         if (binding.rbHours2.isChecked) selectedHours.add(getString(R.string.example_hours_2))
         if (binding.rbHours3.isChecked) selectedHours.add(getString(R.string.example_hours_3))
+
 
         val userRef = db.collection("users").document(uid)
         userRef.get()

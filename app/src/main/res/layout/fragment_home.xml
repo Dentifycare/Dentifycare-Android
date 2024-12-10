@@ -113,9 +113,9 @@
         android:layout_height="wrap_content"
         android:background="@drawable/button_shape"
         android:backgroundTint="@color/white_color"
-        android:textColor="@color/black_color"
         android:textAllCaps="false"
         android:text="@string/try_now"
+        android:textColor="@color/black_color"
         app:layout_constraintBottom_toBottomOf="@+id/img_detect"
         app:layout_constraintEnd_toEndOf="@id/tv_desc_analyze"
         app:layout_constraintStart_toStartOf="@id/tv_desc_analyze" />

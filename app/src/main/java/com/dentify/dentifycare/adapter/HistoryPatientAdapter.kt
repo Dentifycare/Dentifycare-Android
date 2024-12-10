@@ -4,6 +4,7 @@ import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.dentify.dentifycare.R
@@ -32,17 +33,21 @@ class HistoryPatientAdapter(private var post: List<HistoryPatient>): RecyclerVie
         if (historyPatient.status == "Uncompleted") {
             holder.binding.imgStatus.backgroundTintList = holder.itemView.context.getColorStateList(
                 R.color.dentifycare_button_red_color)
-        }
 
-        holder.itemView.setOnClickListener {
-            val context = it.context
-            val intent = Intent(context, FeedbackPageActivity::class.java).apply {
-                putExtra("EXTRA_NAME_Co_Ass", historyPatient.nameCoAss)
-                putExtra("EXTRA_HISTORY_ID", historyPatient.historyID)
-                Log.d("HistoryPatientAdapter", "History ID: ${historyPatient.historyID}")
-                putExtra("EXTRA_HOSPITAL", historyPatient.hospital)
+            holder.itemView.setOnClickListener {
+                val context = it.context
+                val intent = Intent(context, FeedbackPageActivity::class.java).apply {
+                    putExtra("EXTRA_NAME_Co_Ass", historyPatient.nameCoAss)
+                    putExtra("EXTRA_HISTORY_ID", historyPatient.historyID)
+                    Log.d("HistoryPatientAdapter", "History ID: ${historyPatient.historyID}")
+                    putExtra("EXTRA_HOSPITAL", historyPatient.hospital)
+                }
+                context.startActivity(intent)
             }
-            context.startActivity(intent)
+        } else {
+            holder.itemView.setOnClickListener {
+                Toast.makeText(holder.itemView.context, "Status: Completed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

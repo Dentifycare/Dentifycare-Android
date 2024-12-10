@@ -7,6 +7,7 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityFeedbackPageBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class FeedbackPageActivity : AppCompatActivity() {
     private lateinit var binding: ActivityFeedbackPageBinding
@@ -26,7 +27,29 @@ class FeedbackPageActivity : AppCompatActivity() {
         }
 
         binding.btnSubmit.setOnClickListener {
-            finish()
+            val historyId = intent.getStringExtra("EXTRA_HISTORY_ID")
+            val db = FirebaseFirestore.getInstance()
+            db.collection("history")
+                .whereEqualTo("historyID", historyId)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        db.collection("history").document(document.id)
+                            .update("status", "Completed")
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Feedback submitted.", Toast.LENGTH_SHORT).show()
+                                finish()
+                            }
+                            .addOnFailureListener { e ->
+                                e.printStackTrace()
+                                Toast.makeText(this, "Failed to update status.", Toast.LENGTH_SHORT).show()
+                            }
+                    }
+                }
+                .addOnFailureListener { e ->
+                    e.printStackTrace()
+                    Toast.makeText(this, "Failed to fetch document.", Toast.LENGTH_SHORT).show()
+                }
         }
 
         getData()
