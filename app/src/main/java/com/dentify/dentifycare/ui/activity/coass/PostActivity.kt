@@ -80,13 +80,14 @@ class PostActivity : AppCompatActivity() {
         val city = binding.cityEditText.text.toString()
         val province = binding.provinceEditText.text.toString()
         val additionalInfo = binding.informationEditText.text.toString()
+        val quota = "0"
         val currentDate = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date())
 
         val selectedSkills = mutableListOf<String>()
         if (binding.rbCarries.isChecked) selectedSkills.add("caries")
         if (binding.rbCalculus.isChecked) selectedSkills.add("calculus")
         if (binding.rbGingivitis.isChecked) selectedSkills.add("gingivitis")
-        if (binding.rbUlcers.isChecked) selectedSkills.add("ulcers")
+        if (binding.rbUlcers.isChecked) selectedSkills.add("mouth ulcer")
         if (binding.rbHypodontia.isChecked) selectedSkills.add("hypodontia")
         if (binding.rbToothDiscoloration.isChecked) selectedSkills.add("tooth discoloration")
 
@@ -113,7 +114,7 @@ class PostActivity : AppCompatActivity() {
                         "hospital" to hospital,
                         "city" to city,
                         "province" to province,
-                        "quota" to null,
+                        "quota" to quota,
                         "additionalInfo" to additionalInfo,
                         "currentDate" to currentDate,
                         "selectedSkills" to selectedSkills,

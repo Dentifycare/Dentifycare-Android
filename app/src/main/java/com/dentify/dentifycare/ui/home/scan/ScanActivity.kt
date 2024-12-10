@@ -188,7 +188,7 @@ class ScanActivity : AppCompatActivity() {
                 if (response != null) {
                     navigationToAnalyze(response)
                 } else {
-                    Toast.makeText(this, "Upload Failed", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this, "Disease Not Detected", Toast.LENGTH_SHORT).show()
                 }
             }
         } else {

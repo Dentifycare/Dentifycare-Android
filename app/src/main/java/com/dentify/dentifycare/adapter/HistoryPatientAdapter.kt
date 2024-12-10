@@ -45,6 +45,9 @@ class HistoryPatientAdapter(private var post: List<HistoryPatient>): RecyclerVie
                 context.startActivity(intent)
             }
         } else {
+            holder.binding.imgStatus.backgroundTintList = holder.itemView.context.getColorStateList(
+                R.color.dentifycare_main_color
+            )
             holder.itemView.setOnClickListener {
                 Toast.makeText(holder.itemView.context, "Status: Completed", Toast.LENGTH_SHORT).show()
             }
