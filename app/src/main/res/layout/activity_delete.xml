@@ -165,56 +165,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/your_booking_hours" />
 
-    <TextView
-        android:id="@+id/remaining_quota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/remaining_quota"
-        android:textColor="@color/black_color"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintStart_toStartOf="@id/booking_hours"
-        app:layout_constraintTop_toBottomOf="@id/booking_hours"/>
-
-    <TextView
-        android:id="@+id/remaining_quota_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_queue"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/black_color"
-        app:layout_constraintStart_toEndOf="@id/remaining_quota"
-        app:layout_constraintTop_toTopOf="@id/remaining_quota"
-        app:layout_constraintBottom_toBottomOf="@id/remaining_quota"/>
-
-    <TextView
-        android:id="@+id/your_full_quota"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:text="@string/quota"
-        android:textColor="@color/black_color"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/remaining_quota"
-        app:layout_constraintTop_toBottomOf="@id/remaining_quota" />
-
-    <TextView
-        android:id="@+id/quota_value"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/example_queue"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginStart="10dp"
-        android:textColor="@color/black_color"
-        app:layout_constraintStart_toEndOf="@id/your_full_quota"
-        app:layout_constraintTop_toTopOf="@id/your_full_quota"
-        app:layout_constraintBottom_toBottomOf="@id/your_full_quota"/>
-
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btn_complete"
         android:background="@drawable/button_shape"

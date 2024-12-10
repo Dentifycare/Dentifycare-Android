@@ -46,7 +46,6 @@ class PostActivity : AppCompatActivity() {
         binding.hospitalEditText.addTextChangedListener { validateForm() }
         binding.cityEditText.addTextChangedListener { validateForm() }
         binding.provinceEditText.addTextChangedListener { validateForm() }
-        binding.quotaEditText.addTextChangedListener { validateForm() }
         binding.informationEditText.addTextChangedListener { validateForm() }
     }
 
@@ -55,11 +54,10 @@ class PostActivity : AppCompatActivity() {
         val hospital = binding.hospitalEditText.text.toString().trim()
         val city = binding.cityEditText.text.toString().trim()
         val province = binding.provinceEditText.text.toString().trim()
-        val quota = binding.quotaEditText.text.toString().trim()
         val additionalInfo = binding.informationEditText.text.toString().trim()
 
         val isFormValid = name.isNotEmpty() && hospital.isNotEmpty() && city.isNotEmpty() &&
-                province.isNotEmpty() && quota.isNotEmpty() && additionalInfo.isNotEmpty()
+                province.isNotEmpty() && additionalInfo.isNotEmpty()
 
         binding.btnSubmit.isEnabled = isFormValid
         return isFormValid
@@ -81,7 +79,6 @@ class PostActivity : AppCompatActivity() {
         val hospital = binding.hospitalEditText.text.toString()
         val city = binding.cityEditText.text.toString()
         val province = binding.provinceEditText.text.toString()
-        val quota = binding.quotaEditText.text.toString()
         val additionalInfo = binding.informationEditText.text.toString()
         val currentDate = SimpleDateFormat("MMMM dd, yyyy", Locale.getDefault()).format(Date())
 
@@ -116,7 +113,7 @@ class PostActivity : AppCompatActivity() {
                         "hospital" to hospital,
                         "city" to city,
                         "province" to province,
-                        "quota" to quota,
+                        "quota" to null,
                         "additionalInfo" to additionalInfo,
                         "currentDate" to currentDate,
                         "selectedSkills" to selectedSkills,

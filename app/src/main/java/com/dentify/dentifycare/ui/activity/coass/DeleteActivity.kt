@@ -66,8 +66,6 @@ class DeleteActivity : AppCompatActivity() {
         val additionalInformation = intent.getStringExtra("EXTRA_ADDITIONAL_INFORMATION")
         val operationalDate = intent.getStringExtra("EXTRA_OPERATIONAL_DATE")
         val operationalHours = intent.getStringExtra("EXTRA_OPERATIONAL_HOURS")
-        val remainingQuota = intent.getStringExtra("EXTRA_REMAINING_QUOTA")
-        val quota = intent.getStringExtra("EXTRA_QUOTA")
 
         binding.tvNameCoAss.text = name
         binding.tvTitleHospital.text = hospital
@@ -75,8 +73,6 @@ class DeleteActivity : AppCompatActivity() {
         binding.additionalInformationValue.text = additionalInformation
         binding.bookingDated.text = operationalDate
         binding.bookingHours.text = operationalHours
-        binding.remainingQuotaValue.text = remainingQuota
-        binding.quotaValue.text = quota
 
     }
 }
