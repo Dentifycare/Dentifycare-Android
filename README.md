@@ -1,11 +1,12 @@
 # Dentifycare Mobile App
 
-<img src="https://github.com/Dentifycare/Dentifycare-Android/blob/master/icon-app.png?raw=true" alt="App Icon" width="300"/>
+<img src="https://github.com/Dentifycare/Dentifycare-Android/blob/master/Dentifycare%20-%20Mockup.png" alt="App Mockup"/>
 
 ## Introduction
 Welcome to Dentifycare, a mobile application designed to assist both dental assistants and the general public.
 
 ## About the Project
+
 Dentifycare is a comprehensive mobile application developed to bridge the gap between dental professionals and patients, providing an accessible and user-friendly platform for dental care management.  
 
 Key features of the app include:  
@@ -44,6 +45,16 @@ This app requires access to the following features and data:
 - **Camera**: For capturing images directly within the app.
 - **Location**: For location-based features (if applicable).
 - **Storage**: For saving and retrieving files locally.
+
+## Tools  
+- **Android Studio**: Integrated Development Environment (IDE) for Android development.  
+- **Figma**: Collaborative design tool for UI/UX design and prototyping.  
+- **Google Fonts**: Library of open-source font families for enhancing typography.  
+- **Material Design**: Guidelines and components for building modern, visually appealing interfaces.  
+- **Color Hunt**: Palette inspiration for creating visually cohesive designs.  
+- **Freepik**: Resource for free and premium vector graphics and illustrations.  
+- **Story Set**: Library of customizable illustrations for enhancing app visuals.  
+- **Dribbble**: Platform for discovering creative design ideas and inspirations.  
 
 ## API Mobile Documentation
 For detailed information about the Dentifycare API, please refer to the following documentation: [API Model ML for Mobile Documentation](https://dentifycare-ml-api-363002036886.asia-southeast2.run.app/docs).
