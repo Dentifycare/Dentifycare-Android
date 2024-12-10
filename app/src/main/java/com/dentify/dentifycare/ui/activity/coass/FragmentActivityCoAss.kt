@@ -92,4 +92,9 @@ class FragmentActivityCoAss : Fragment() {
         val intent = Intent(requireContext(), PostActivity::class.java)
         startActivity(intent)
     }
+
+    override fun onResume() {
+        super.onResume()
+        fetchData()
+    }
 }

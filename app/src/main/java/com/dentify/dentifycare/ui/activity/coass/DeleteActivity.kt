@@ -1,11 +1,14 @@
 package com.dentify.dentifycare.ui.activity.coass
 
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.dentify.dentifycare.R
 import com.dentify.dentifycare.databinding.ActivityDeleteBinding
+import com.google.firebase.firestore.FirebaseFirestore
 
 class DeleteActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDeleteBinding
@@ -21,6 +24,39 @@ class DeleteActivity : AppCompatActivity() {
         }
 
         callData()
+
+        binding.btnComplete.setOnClickListener {
+            binding.progressBar.visibility = View.VISIBLE
+            val postId = intent.getStringExtra("EXTRA_POST_ID")
+            val db = FirebaseFirestore.getInstance()
+            db.collection("posts")
+                .whereEqualTo("postId", postId)
+                .get()
+                .addOnSuccessListener { documents ->
+                    for (document in documents) {
+                        db.collection("posts").document(document.id)
+                            .update("status", "Completed")
+                            .addOnSuccessListener {
+                                Toast.makeText(this, "Status Completed", Toast.LENGTH_SHORT)
+                                    .show()
+                                finish()
+                                binding.progressBar.visibility = View.GONE
+                            }
+                            .addOnFailureListener { e ->
+                                e.printStackTrace()
+                                Toast.makeText(this, "Failed to update status.", Toast.LENGTH_SHORT)
+                                    .show()
+                                binding.progressBar.visibility = View.GONE
+                            }
+                    }
+                }
+                .addOnFailureListener { e ->
+                    e.printStackTrace()
+                    Toast.makeText(this, "Failed to fetch document.", Toast.LENGTH_SHORT).show()
+                    binding.progressBar.visibility = View.GONE
+                }
+
+        }
     }
 
     private fun callData() {

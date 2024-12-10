@@ -52,7 +52,7 @@ class AnalyzeFoundActivity : AppCompatActivity() {
                         postId = document.id
                     }
 
-                    if (diagnosisFilter == null || post.selectedSkills[0] == diagnosisFilter) {
+                    if (post.status != "Completed" && (diagnosisFilter == null || post.selectedSkills[0] == diagnosisFilter)) {
                         postList.add(post)
                     }
                 }

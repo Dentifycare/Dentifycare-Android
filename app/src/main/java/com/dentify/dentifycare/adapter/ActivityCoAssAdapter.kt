@@ -1,8 +1,10 @@
 package com.dentify.dentifycare.adapter
 
 import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.dentify.dentifycare.R
@@ -29,22 +31,29 @@ class ActivityCoAssAdapter(private var post: List<PostCoAss>): RecyclerView.Adap
         holder.binding.tvStatusActivity.text = postCoAss.status
 
         if (postCoAss.status == "Uncompleted") {
-            holder.binding.imgStatus.backgroundTintList = holder.itemView.context.getColorStateList(R.color.dentifycare_button_red_color)
-        }
+            holder.binding.imgStatus.backgroundTintList = holder.itemView.context.getColorStateList(
+                R.color.dentifycare_button_red_color)
 
-        holder.itemView.setOnClickListener {
-            val context = it.context
-            val intent = Intent(context, DeleteActivity::class.java).apply {
-                putExtra("EXTRA_NAME", postCoAss.name)
-                putExtra("EXTRA_HOSPITAL", postCoAss.hospital)
-                putExtra("EXTRA_SKILL", postCoAss.selectedSkills[0])
-                putExtra("EXTRA_ADDITIONAL_INFORMATION", postCoAss.additionalInfo)
-                putExtra("EXTRA_OPERATIONAL_DATE", postCoAss.currentDate)
-                putExtra("EXTRA_OPERATIONAL_HOURS", postCoAss.selectedHours[0])
-                putExtra("EXTRA_REMAINING_QUOTA", postCoAss.quota)
-                putExtra("EXTRA_QUOTA", postCoAss.quota)
+            holder.itemView.setOnClickListener {
+                val context = it.context
+                val intent = Intent(context, DeleteActivity::class.java).apply {
+                    putExtra("EXTRA_POST_ID", postCoAss.postId)
+                    Log.d("EXTRA_POST_ID", postCoAss.postId)
+                    putExtra("EXTRA_NAME", postCoAss.name)
+                    putExtra("EXTRA_HOSPITAL", postCoAss.hospital)
+                    putExtra("EXTRA_SKILL", postCoAss.selectedSkills[0])
+                    putExtra("EXTRA_ADDITIONAL_INFORMATION", postCoAss.additionalInfo)
+                    putExtra("EXTRA_OPERATIONAL_DATE", postCoAss.currentDate)
+                    putExtra("EXTRA_OPERATIONAL_HOURS", postCoAss.selectedHours[0])
+                    putExtra("EXTRA_REMAINING_QUOTA", postCoAss.quota)
+                    putExtra("EXTRA_QUOTA", postCoAss.quota)
+                }
+                context.startActivity(intent)
             }
-            context.startActivity(intent)
+        } else {
+            holder.itemView.setOnClickListener {
+                Toast.makeText(holder.itemView.context, "Status: Completed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
